@@ -1,0 +1,46 @@
+[
+  {
+    "username": "admin",
+    "password": "admin",
+    "fName": "first-name",
+    "lName": "last-name",
+    "balance": 0,
+    "mobileNum": "0917123123",
+    "acctNum": "00000001",
+    "role": "admin",
+    "isLoggedIn": false
+  },
+  {
+    "username": "neds",
+    "password": "neds",
+    "fName": "Eddard",
+    "lName": "Stark",
+    "balance": 123123.12,
+    "mobileNum": "0917123123",
+    "acctNum": "00000002",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "tyrionl",
+    "password": "tyrionl",
+    "fName": "Tyrion",
+    "lName": "Lannister",
+    "balance": 321321.32,
+    "mobileNum": "0917123123",
+    "acctNum": "00000003",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "sandorc",
+    "password": "sandorc",
+    "fName": "Sandor",
+    "lName": "Clegane",
+    "balance": 123.12,
+    "mobileNum": "0917123123",
+    "acctNum": "00000004",
+    "role": "customer",
+    "isLoggedIn": false
+  }
+]

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Coda+Caption&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;800&family=Coda+Caption&display=swap');
+
+:root {
+  --header-font: 'Cinzel', cursive;
+}
+
+.home {
+  height: 100vh;
+  width: 80vw;
+  background-color: inherit;
+  font-family: var(--header-font);
+  margin: auto;
+  color: lightgray;
+
+  display: flex;
+  flex-direction: column;
+}

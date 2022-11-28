@@ -1,0 +1,27 @@
+.main {
+  height: max-content;
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.abbr {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+button {
+  height: max-content;
+  padding: 10px;
+  color: white;
+  background-color: inherit;
+  border-radius: 15px;
+  border: 1px solid white;
+}
+
+.btn-load-data {
+  grid-column: 9 / 10;
+}
