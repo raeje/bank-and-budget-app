@@ -1,0 +1,10 @@
+.dashboard-body {
+  height: 85vh;
+  width: 100vw;
+  color: white;
+
+  display: grid;
+  grid-template-columns: 20% 1fr;
+
+  border: 1px solid white;
+}

@@ -2,8 +2,8 @@
   {
     "username": "admin",
     "password": "admin",
-    "fName": "first-name",
-    "lName": "last-name",
+    "fName": "Iron",
+    "lName": "Bank",
     "balance": 0,
     "mobileNum": "0917123123",
     "acctNum": "00000001",

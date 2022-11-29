@@ -1,2 +1,2 @@
-import { getUsers, getCurrentUser } from "./Util";
-export { getUsers, getCurrentUser };
+import { getUsers, getCurrentUser, getUserTabs } from "./Util";
+export { getUsers, getCurrentUser, getUserTabs };

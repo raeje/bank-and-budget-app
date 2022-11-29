@@ -1,19 +1,48 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import { getCurrentUser } from "../utils";
+import "./Dashboard.css";
+import { TopNav, DashboardBody, Sidebar, Tabs, Tab } from "../parts";
+import { useLocation, useNavigate, redirect } from "react-router-dom";
+import { getCurrentUser, getUserTabs } from "../utils";
+import { Logout } from "../components";
 
 const Dashboard = (props) => {
   const { state } = useLocation();
   const user = state ? state : getCurrentUser();
-  console.log(user);
 
-  //const user = props.username;
+  const tabs = getUserTabs();
+  const renderTabs = (tabs) => {
+    return tabs.map((tab) => {
+      return (
+        <li key={tab.icon}>
+          <Tab icon={tab.icon} text={tab.text} />
+        </li>
+      );
+    });
+  };
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    Logout({ username: user.username });
+    navigate("/home", { replace: true });
+  };
+
   return (
     <div className="dashboard-container">
-      <h1>
-        Welcome {user.fName} {user.lName}!
-      </h1>
-      <section className="dash-sidebar"></section>
+      <TopNav name="IBB" />
+      <DashboardBody>
+        <Sidebar>
+          <h3>
+            Welcome{" "}
+            <span className="fullname">
+              {user.fName} {user.lName}
+            </span>
+            !
+          </h3>
+          <Tabs>{renderTabs(tabs)}</Tabs>
+          <Tab icon="logout" text="Logout" onClick={handleLogout} />
+        </Sidebar>
+      </DashboardBody>
+
       <section className="dash-main"></section>
       <section className="dash-footer"></section>
     </div>

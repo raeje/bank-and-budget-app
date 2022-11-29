@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Coda+Caption&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;800&family=Coda+Caption&display=swap');
+
+html {
+  --header-font: 'Cinzel', cursive;
+}
+
 .main {
-  height: max-content;
+  height: 15vh;
   padding: 10px;
+  color: white;
 
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -11,6 +19,7 @@
 .abbr {
   font-size: 50px;
   font-weight: 900;
+  font-family: var(--header-font);
 }
 
 button {

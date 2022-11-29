@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import Login from "../components/Login";
@@ -19,8 +19,21 @@ const LoginForm = () => {
   const handleLogin = () => {
     const currentUser = Login({ username, password });
     console.log(currentUser);
-    if (currentUser) navigate("/dashboard", { state: currentUser });
+    if (currentUser) navigate("dashboard", { state: currentUser });
   };
+
+  useEffect(() => {
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        console.log(username, password);
+        document.getElementById("login-btn").click();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <div className="login-form-container">
