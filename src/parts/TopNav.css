@@ -8,7 +8,7 @@ html {
 .main {
   height: 15vh;
   padding: 10px;
-  color: white;
+  color: var(--white);
 
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -25,10 +25,10 @@ html {
 button {
   height: max-content;
   padding: 10px;
-  color: white;
+  color: var(--white);;
   background-color: inherit;
   border-radius: 15px;
-  border: 1px solid white;
+  border: 1px solid var(--white);;
 }
 
 .btn-load-data {

@@ -21,7 +21,7 @@ const Icons = (props) => {
   }
 
   if (name === "budget") {
-    icon = <i className="fa-solid fa-user"></i>;
+    icon = <i className="fa-sharp fa-solid fa-file-invoice-dollar"></i>;
   }
 
   if (name === "logout") {

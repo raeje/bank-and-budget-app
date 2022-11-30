@@ -1,7 +1,7 @@
 .dashboard-body {
   height: 85vh;
   width: 100vw;
-  color: white;
+  color: var(--white);
 
   display: grid;
   grid-template-columns: 20% 1fr;

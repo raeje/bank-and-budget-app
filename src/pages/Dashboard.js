@@ -1,7 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import { TopNav, DashboardBody, Sidebar, Tabs, Tab } from "../parts";
-import { useLocation, useNavigate, redirect } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getCurrentUser, getUserTabs } from "../utils";
 import { Logout } from "../components";
 

@@ -19,6 +19,7 @@ const getUserTabs = () => {
     withdraw: { icon: "withdraw", text: "Withdraw" },
     transfer: { icon: "transfer", text: "Transfer" },
     budget: { icon: "budget", text: "Budget" },
+    createUSer: { icon: "create-user", text: "CreateUser" },
   };
 
   const adminTabs = [tabs.profile, tabs.deposit, tabs.withdraw, tabs.transfer];
@@ -27,4 +28,30 @@ const getUserTabs = () => {
   return user.role === "admin" ? adminTabs : customerTabs;
 };
 
-export { getUsers, getCurrentUser, getUserTabs };
+const updateLocalStorage = (key, data) => {
+  localStorage.setItem(key, JSON.stringify(data));
+  console.log(
+    `Local storage updated! key: ${key} data: ${getUsers().forEach(
+      (user) => user
+    )}`
+  );
+};
+
+const updateUsersList = (username, item, value) => {
+  let users = getUsers();
+  const updatedList = users.map((user) => {
+    if (user.username === username) {
+      user[item] = value;
+    }
+    return user;
+  });
+  updateLocalStorage("users", updatedList);
+};
+
+export {
+  getUsers,
+  getCurrentUser,
+  getUserTabs,
+  updateLocalStorage,
+  updateUsersList,
+};

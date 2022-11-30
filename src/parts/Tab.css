@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   border-radius: 10px;
+  cursor: pointer;
 
   display: grid;
   grid-template-columns: 30% 70%;
@@ -10,7 +11,12 @@
   align-items: center;
   grid-gap: 5px;
 
-  border: 1px solid white;
+  border: 1px solid var(--white);
+}
+
+.tab:hover {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
 }
 
 i {

@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Coda+Caption&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;800&family=Coda+Caption&display=swap');
+:root {
+  --black: rgb(55, 55, 55);
+  --yellow: rgb(154, 151, 96);
+  --white: rgb(249, 246, 238);
+}
 
 html {
   --header-font: 'Cinzel', cursive;
 }
 
 body {
-  background-color: rgb(55, 55, 55);
+  background-color: var(--black);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

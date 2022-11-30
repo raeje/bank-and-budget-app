@@ -1,32 +1,28 @@
-import { getUsers } from "../utils";
+import { getUsers, updateUsersList, updateLocalStorage } from "../utils";
 
 let users = getUsers();
-console.log(users);
 users.forEach((user) =>
   console.log(`username: ${user.username} isLoggedIn: ${user.isLoggedIn}`)
 );
 
+const verifyLogin = (username, password) => {
+  const currentUser = users.filter(
+    (user) => username === user.username && password === user.password
+  );
+  return currentUser[0];
+};
+
 const Login = (props) => {
   const username = props.username;
   const password = props.password;
-  let currentUser = undefined;
+  const currentUser = verifyLogin(username, password);
 
-  //console.log(props, props.username, props.password);
-  users.forEach((user, index) => {
-    if (username === user.username && password === user.password) {
-      user.isLoggedIn = true;
-      localStorage.setItem("users", JSON.stringify(users));
-      console.log(`${username} logged in!`);
-
-      currentUser = user;
-    }
-
-    if (index === users.length - 1 && !currentUser) {
-      console.log(`Login failed. Wrong username or password.`);
-    }
-  });
-
-  return currentUser;
+  if (currentUser) {
+    updateUsersList(currentUser.username, "isLoggedIn", true);
+    console.log(`${currentUser.username} logged in! ${currentUser.role}`);
+    return currentUser;
+  }
+  return false;
 };
 
 export default Login;
