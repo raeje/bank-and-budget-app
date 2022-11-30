@@ -2,11 +2,11 @@
   {
     "username": "admin",
     "password": "ironbank",
-    "fName": "Iron",
-    "lName": "Bank",
+    "fName": "Noho",
+    "lName": "Dimittis",
     "balance": 0,
     "mobileNum": "0917123123",
-    "acctNum": "00000001",
+    "acctNum": "001",
     "role": "admin",
     "isLoggedIn": false
   },
@@ -16,8 +16,8 @@
     "fName": "Eddard",
     "lName": "Stark",
     "balance": 123123.12,
-    "mobileNum": "0917123123",
-    "acctNum": "00000002",
+    "mobileNum": "09139483958",
+    "acctNum": "92075257",
     "role": "customer",
     "isLoggedIn": false
   },
@@ -27,8 +27,8 @@
     "fName": "Tyrion",
     "lName": "Lannister",
     "balance": 321321.32,
-    "mobileNum": "0917123123",
-    "acctNum": "00000003",
+    "mobileNum": "09832938492",
+    "acctNum": "16159333",
     "role": "customer",
     "isLoggedIn": false
   },
@@ -38,8 +38,52 @@
     "fName": "Sandor",
     "lName": "Clegane",
     "balance": 123.12,
-    "mobileNum": "0917123123",
-    "acctNum": "00000004",
+    "mobileNum": "09938274921",
+    "acctNum": "27182268",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "danyt",
+    "password": "drogo",
+    "fName": "Daenerys",
+    "lName": "Targaryan",
+    "balance": 123.12,
+    "mobileNum": "09128374637",
+    "acctNum": "84602019",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "bobbyb",
+    "password": "robertb",
+    "fName": "Robert",
+    "lName": "Baratheon",
+    "balance": 123.12,
+    "mobileNum": "099384717283",
+    "acctNum": "12484020",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "jons",
+    "password": "youknownothing",
+    "fName": "Jon",
+    "lName": "Snow",
+    "balance": 123.12,
+    "mobileNum": "09174438481",
+    "acctNum": "62813098",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "khald",
+    "password": "khaldrogo",
+    "fName": "Khal",
+    "lName": "Drogo",
+    "balance": 123.12,
+    "mobileNum": "0991332199",
+    "acctNum": "40768139",
     "role": "customer",
     "isLoggedIn": false
   }

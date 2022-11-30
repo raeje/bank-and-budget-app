@@ -5,6 +5,4 @@
 
   display: grid;
   grid-template-columns: 20% 1fr;
-
-  border: 1px solid white;
 }

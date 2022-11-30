@@ -14,7 +14,7 @@ const getCurrentUser = () => {
 const getUserTabs = () => {
   const user = getCurrentUser();
   const tabs = {
-    profile: { icon: "profile", text: "Profile" },
+    profile: { icon: "profile", text: "My Profile" },
     deposit: { icon: "deposit", text: "Deposit" },
     withdraw: { icon: "withdraw", text: "Withdraw" },
     transfer: { icon: "transfer", text: "Transfer" },
@@ -26,6 +26,14 @@ const getUserTabs = () => {
   const customerTabs = [tabs.profile, tabs.budget];
 
   return user.role === "admin" ? adminTabs : customerTabs;
+};
+
+const getFilteredUsersList = (key, value) => {
+  const users = getUsers();
+  let filteredList = [];
+
+  filteredList = users.filter((user) => user[key].includes(value));
+  return filteredList;
 };
 
 const updateLocalStorage = (key, data) => {
@@ -52,6 +60,7 @@ export {
   getUsers,
   getCurrentUser,
   getUserTabs,
+  getFilteredUsersList,
   updateLocalStorage,
   updateUsersList,
 };

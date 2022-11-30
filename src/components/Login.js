@@ -1,4 +1,4 @@
-import { getUsers, updateUsersList, updateLocalStorage } from "../utils";
+import { getUsers, updateUsersList } from "../utils";
 
 let users = getUsers();
 users.forEach((user) =>

@@ -7,7 +7,7 @@ html {
 
 .main {
   height: 15vh;
-  padding: 10px;
+  padding: 10px 30px;
   color: var(--white);
 
   display: grid;
