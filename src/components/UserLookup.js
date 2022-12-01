@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { getFilteredUsersList, updateUsersList } from "../utils";
-import UserInfo from "./UserInfo";
+import { getFilteredUsersList } from "../utils";
+import { UserInfo } from "../parts";
 
-const UserLookup = (props) => {
-  const [customer, setCustomer] = useState();
+const UserLookup = ({ customer, setCustomer, setNotif }) => {
   const [accountNumber, setAccountNumber] = useState();
   const [accountNumberOptions, setAccountNumberOptions] = useState(); // dropdown list of account numbers
-  const [notif, setNotif] = useState({ status: undefined, message: undefined });
 
   const handleAcctNumChange = (e) => {
     setAccountNumber(e.target.value);
@@ -15,7 +13,9 @@ const UserLookup = (props) => {
   const setOptions = (filteredList) => {
     setAccountNumberOptions(
       filteredList.map((opt, index) => (
-        <option key={(opt, index)}>{opt.acctNum}</option>
+        <option key={(opt, index)} value={opt.acctNum}>
+          {opt.fName} {opt.lName}
+        </option>
       ))
     );
   };
@@ -39,8 +39,12 @@ const UserLookup = (props) => {
     }
   }, [accountNumber]);
 
+  useEffect(() => {
+    document.querySelector(".account-number").value = "";
+  }, [customer]);
+
   return (
-    <div className="customer-info glass space">
+    <div className="customer-info glass panel">
       <div className="search-input">
         <label labelfor="account-number">Search by account number: </label>
         <input
@@ -49,6 +53,7 @@ const UserLookup = (props) => {
           id="account-number"
           list="accounts"
           autoComplete="off"
+          maxLength="8"
           onChange={(e) => handleAcctNumChange(e)}
         />
         <datalist id="accounts">{accountNumberOptions}</datalist>
