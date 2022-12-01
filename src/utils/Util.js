@@ -54,6 +54,7 @@ const updateUsersList = (username, item, value) => {
     return user;
   });
   updateLocalStorage("users", updatedList);
+  console.log(`Updated ${username.toUpperCase()}'s ${item} to ${value}!`);
 };
 
 export {

@@ -2,7 +2,7 @@ import React from "react";
 import "./UserInfo.css";
 
 const UserInfo = (props) => {
-  const customer = props.customer ? props.customer[0] : "";
+  const customer = props.customer ? props.customer : "";
   let info = "";
 
   if (customer) {

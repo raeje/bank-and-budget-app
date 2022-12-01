@@ -12,27 +12,29 @@
 .space {
   height: 100%;
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px 50px;
 }
 
-.customer-info {
+.customer-info, .transact-space {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 20% 1fr;
+  grid-template-rows: 20% 1fr 10% 10%;
   grid-gap: 10px;
 }
 
-.search-input {
+.search-input, .balance-info {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   place-items: center;
 }
 
-.account-number {
+.account-number, .balance-value, .deposit-amount{
   width: 100%;
   height: 100%;
   font-size: 40px;
+  background-color: var(--white);
+  color: var(--black);
   appearance: none;
   text-align: center;
   padding: 0 10px;
@@ -40,6 +42,22 @@
   outline: var(--yellow);
   border: 3px solid var(--yellow);
   border-radius: 15px;
+}
+
+.deposit-amount-container {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+.deposit-amount {
+  height: max-content;
+}
+
+.balance-value {
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .account-number::-webkit-calendar-picker-indicator {

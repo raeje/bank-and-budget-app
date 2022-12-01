@@ -86,5 +86,104 @@
     "acctNum": "40768139",
     "role": "customer",
     "isLoggedIn": false
+  },
+  {
+    "username": "cerseil",
+    "password": "cerseil",
+    "fName": "Cersei",
+    "lName": "Lannister",
+    "balance": 3991.32,
+    "mobileNum": "09778819201",
+    "acctNum": "49588589",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "catelyns",
+    "password": "catelyns",
+    "fName": "Catelyn",
+    "lName": "Stark",
+    "balance": 81213.32,
+    "mobileNum": "09779918312",
+    "acctNum": "96223354",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "robbs",
+    "password": "robbstark",
+    "fName": "Robb",
+    "lName": "Stark",
+    "balance": 21113.32,
+    "mobileNum": "09771273718",
+    "acctNum": "51741979",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "sansas",
+    "password": "sansastark",
+    "fName": "Sansa",
+    "lName": "Stark",
+    "balance": 38890.50,
+    "mobileNum": "097720394871",
+    "acctNum": "60269489",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "jorahm",
+    "password": "jorahmormont",
+    "fName": "Jorah",
+    "lName": "Mormont",
+    "balance": 290.50,
+    "mobileNum": "09993817721",
+    "acctNum": "54447563",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "theong",
+    "password": "theongreyjoy",
+    "fName": "Theon",
+    "lName": "Greyjoy",
+    "balance": 1290.50,
+    "mobileNum": "09158891293",
+    "acctNum": "17242460",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "bronnb",
+    "password": "bronnblackwater",
+    "fName": "Bronn",
+    "lName": "Blackwater",
+    "balance": 90.50,
+    "mobileNum": "09157364461",
+    "acctNum": "99816190",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "barristans",
+    "password": "barristanselmy",
+    "fName": "Barristan",
+    "lName": "Selmy",
+    "balance": 8321.50,
+    "mobileNum": "09157474551",
+    "acctNum": "82654894",
+    "role": "customer",
+    "isLoggedIn": false
+  },
+  {
+    "username": "ramsayb",
+    "password": "ramsaybolton",
+    "fName": "Ramsay",
+    "lName": "Bolton",
+    "balance": 99999.99,
+    "mobileNum": "09184451238",
+    "acctNum": "68123160",
+    "role": "customer",
+    "isLoggedIn": false
   }
 ]
