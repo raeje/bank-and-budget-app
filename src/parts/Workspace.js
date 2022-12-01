@@ -28,7 +28,6 @@ const Workspace = (props) => {
         status: "error",
         message: "Deposit amount must be greater than 0.",
       });
-      console.log(notif);
       return;
     }
 
