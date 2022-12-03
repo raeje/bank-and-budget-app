@@ -7,10 +7,17 @@ const Withdraw = (customer, amount, setNotif) => {
     return;
   }
 
+  if (amount > customer.balance) {
+    setNotif({
+      status: "error",
+      message: "Amount cannot be greater than current balance.",
+    });
+    return;
+  }
+
   setNotif({
     status: "success",
-    message: `Transaction complete!
-    Deducted ${amount} credits to ${customer.username.toUpperCase()}'s balance.`,
+    message: `Deducted ${amount} credits to ${customer.username.toUpperCase()}'s balance.`,
   });
   return parseFloat(customer.balance) - parseFloat(amount);
 };

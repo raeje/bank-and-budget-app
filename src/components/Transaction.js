@@ -3,8 +3,8 @@ import { Notifications } from "../parts";
 import { updateUsersList } from "../utils";
 import { Deposit, Withdraw, UserLookup } from "./";
 
-const Transaction = ({ type = "deposit" }) => {
-  const [customer, setCustomer] = useState();
+const Transaction = ({ type }) => {
+  const [customer, setCustomer] = useState(undefined);
   const [balance, setBalance] = useState(0);
   const [amount, setAmount] = useState(0);
   const [notif, setNotif] = useState({ status: undefined, message: undefined });
@@ -16,20 +16,25 @@ const Transaction = ({ type = "deposit" }) => {
   const handleBtnClick = () => {
     let updatedCustomer = customer;
     const total =
-      type === "deposit"
+      type === "deposit" && amount
         ? Deposit(customer, amount, setNotif)
         : Withdraw(customer, amount, setNotif);
-    updatedCustomer.balance = total;
-    setBalance(updatedCustomer.balance);
-    setCustomer(updatedCustomer);
-    updateUsersList(customer.username, "balance", updatedCustomer.balance);
+    if (amount > 0) {
+      updatedCustomer.balance = total;
+      setBalance(updatedCustomer.balance);
+      setCustomer(updatedCustomer);
+      updateUsersList(customer.username, "balance", updatedCustomer.balance);
+    }
   };
 
   useEffect(() => {
-    setCustomer();
-    setBalance();
-    setAmount();
+    setCustomer(undefined);
+    setBalance(0);
+    setAmount(0);
     setNotif({ status: undefined, message: undefined });
+    document.querySelector(".balance-value").innerText = 0;
+    document.querySelector(".account-number").value = "";
+    document.querySelector(".amount").value = "";
   }, [type]);
 
   // Displays initial balance

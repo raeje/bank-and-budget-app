@@ -18,7 +18,6 @@ const LoginForm = () => {
 
   const handleLogin = () => {
     const currentUser = Login({ username, password });
-    console.log(currentUser);
     if (currentUser)
       navigate("/dashboard", { state: currentUser, replace: true });
   };

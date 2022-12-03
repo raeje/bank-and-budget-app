@@ -39,9 +39,11 @@ const UserLookup = ({ customer, setCustomer, setNotif }) => {
     }
   }, [accountNumber]);
 
+  /*
   useEffect(() => {
-    document.querySelector(".account-number").value = "";
+    setAccountNumber(0);
   }, [customer]);
+  */
 
   return (
     <div className="customer-info glass panel">

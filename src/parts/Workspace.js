@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Workspace.css";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { Transaction } from "../components";
 
-const Workspace = ({ activeTab }) => {
+const Workspace = ({ activeTab = "deposit" }) => {
   const [type, setType] = useState();
 
   useEffect(() => {
@@ -12,7 +13,7 @@ const Workspace = ({ activeTab }) => {
   return (
     <div className="workspace container glass">
       <span className="workspace-title">{type}</span>
-      <Transaction type={type} />
+      <Transaction type={activeTab} />
     </div>
   );
 };

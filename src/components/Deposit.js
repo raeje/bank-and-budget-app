@@ -9,8 +9,7 @@ const Deposit = (customer, amount, setNotif) => {
 
   setNotif({
     status: "success",
-    message: `Transaction complete!
-    Added ${amount} credits to ${customer.username.toUpperCase()}'s balance.`,
+    message: `Added ${amount} credits to ${customer.username.toUpperCase()}'s balance.`,
   });
   return parseFloat(customer.balance) + parseFloat(amount);
 };

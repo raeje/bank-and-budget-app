@@ -1,9 +1,11 @@
 import { getUsers, updateUsersList } from "../utils";
 
 let users = getUsers();
+/*
 users.forEach((user) =>
   console.log(`username: ${user.username} isLoggedIn: ${user.isLoggedIn}`)
 );
+*/
 
 const verifyLogin = (username, password) => {
   const currentUser = users.filter(

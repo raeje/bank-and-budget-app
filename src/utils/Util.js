@@ -39,9 +39,11 @@ const getFilteredUsersList = (key, value) => {
 const updateLocalStorage = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
   console.log(
-    `Local storage updated! key: ${key} data: ${getUsers().forEach(
-      (user) => user
-    )}`
+    "Local storage updated!",
+    "\n",
+    `key:  ${key}`,
+    "\n",
+    `data: ${data}`
   );
 };
 
