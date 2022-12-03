@@ -11,7 +11,7 @@
   background-color: inherit;
   font-family: var(--header-font);
   margin: auto;
-  color: var(--black);
+  color: var(--primary);
 
   display: flex;
   flex-direction: column;
