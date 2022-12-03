@@ -1,21 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { TopNav, DashboardBody, Sidebar, Tabs, Tab, Workspace } from "../parts";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getCurrentUser, getUserTabs } from "../utils";
 import { Logout } from "../components";
 
-const Dashboard = (props) => {
-  const { state } = useLocation();
-  const user = state ? state : getCurrentUser();
+const Dashboard = () => {
   const [activeTab, setActiveTab] = useState();
+  const currentUser = getCurrentUser();
+  const tabs = getUserTabs(currentUser);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log(currentUser);
+    if (!currentUser) {
+      navigate("/home", { replace: true });
+      return;
+    }
+  }, []);
+
+  const handleLogout = () => {
+    Logout({ username: currentUser.username });
+    navigate("/home", { replace: true });
+    return;
+  };
 
   const handleTabClick = (tab) => {
     console.log("clicked", tab.target.id);
     setActiveTab(tab.target.id);
   };
 
-  const tabs = getUserTabs();
   const renderTabs = (tabs) => {
     return tabs.map((tab) => {
       return (
@@ -30,12 +44,6 @@ const Dashboard = (props) => {
     });
   };
 
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    Logout({ username: user.username });
-    navigate("/home", { replace: true });
-  };
-
   return (
     <div className="dashboard-container">
       <TopNav name="IBB" />
@@ -44,11 +52,11 @@ const Dashboard = (props) => {
           <h3>
             Hello,{" "}
             <span className="fullname">
-              {user.fName} {user.lName}
+              {currentUser ? `${currentUser.fName} ${currentUser.lName}` : ""}
             </span>
             !
           </h3>
-          <Tabs>{renderTabs(tabs)}</Tabs>
+          <Tabs>{currentUser ? renderTabs(tabs) : ""}</Tabs>
           <Tab icon="logout" text="Logout" onClick={handleLogout} />
         </Sidebar>
         <Workspace activeTab={activeTab} />

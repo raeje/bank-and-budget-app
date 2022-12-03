@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+//import { Dashboard } from "../pages";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import Login from "../components/Login";
+import { getCurrentUser } from "../utils";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -17,15 +20,18 @@ const LoginForm = () => {
   };
 
   const handleLogin = () => {
-    const currentUser = Login({ username, password });
-    if (currentUser)
-      navigate("/dashboard", { state: currentUser, replace: true });
+    Login({ username, password });
+    const currentUser = getCurrentUser();
+    if (currentUser) {
+      console.log("LoginForm", currentUser);
+      //navigate("/dashboard", { state: currentUser, replace: true });
+      navigate("/dashboard", { replace: true });
+    }
   };
 
   useEffect(() => {
     const listener = (event) => {
       if (event.code === "Enter" || event.code === "NumpadEnter") {
-        console.log(username, password);
         document.getElementById("login-btn").click();
       }
     };

@@ -1,4 +1,5 @@
 import { getUsers, updateUsersList } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 let users = getUsers();
 /*
@@ -15,6 +16,7 @@ const verifyLogin = (username, password) => {
 };
 
 const Login = (props) => {
+  //const navigate = useNavigate();
   const username = props.username;
   const password = props.password;
   const currentUser = verifyLogin(username, password);
@@ -22,9 +24,8 @@ const Login = (props) => {
   if (currentUser) {
     updateUsersList(currentUser.username, "isLoggedIn", true);
     console.log(`${currentUser.username} logged in! ${currentUser.role}`);
-    return currentUser;
   }
-  return false;
+  console.log("Wrong username or password.");
 };
 
 export default Login;

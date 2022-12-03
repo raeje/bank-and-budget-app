@@ -11,8 +11,11 @@ const getCurrentUser = () => {
   return currentUser;
 };
 
-const getUserTabs = () => {
-  const user = getCurrentUser();
+const getUserTabs = (user) => {
+  //const user = getCurrentUser();
+  if (!user) {
+    return;
+  }
   const tabs = {
     profile: { icon: "profile", text: "My Profile" },
     deposit: { icon: "deposit", text: "Deposit" },

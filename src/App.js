@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Home, Dashboard } from "./pages";
+import { Dashboard } from "./pages";
 import { getCurrentUser } from "./utils";
 
 function App() {
   const currentUser = getCurrentUser();
-  return currentUser ? <Dashboard /> : <Home />;
+  return; // currentUser ? <Dashboard /> : <Home />;
 }
 
 export default App;
