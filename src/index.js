@@ -1,45 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Root from "./routes/root";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Home, Dashboard } from "./routes";
+import { Transaction } from "./components";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    children: [
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
-      },
-    ],
+  },
+  {
+    path: "/home",
+    element: <Home />,
   },
   {
     path: "/dashboard",
     element: <Dashboard />,
+    children: [
+      {
+        path: "/dashboard/deposit",
+        element: <Transaction type="deposit" />,
+      },
+      {
+        path: "/dashboard/withdraw",
+        element: <Transaction type="withdraw" />,
+      },
+    ],
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

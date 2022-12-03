@@ -1,5 +1,4 @@
 import { getUsers, updateUsersList } from "../utils";
-import { useNavigate } from "react-router-dom";
 
 let users = getUsers();
 /*
@@ -16,7 +15,6 @@ const verifyLogin = (username, password) => {
 };
 
 const Login = (props) => {
-  //const navigate = useNavigate();
   const username = props.username;
   const password = props.password;
   const currentUser = verifyLogin(username, password);

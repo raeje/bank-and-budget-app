@@ -1,6 +1,4 @@
-import React from "react";
 import "./App.css";
-import { Dashboard } from "./pages";
 import { getCurrentUser } from "./utils";
 
 function App() {

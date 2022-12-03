@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 import "./Dashboard.css";
-import { TopNav, DashboardBody, Sidebar, Tabs, Tab, Workspace } from "../parts";
-import { useLocation, useNavigate } from "react-router-dom";
+import { TopNav, DashboardBody, Sidebar, Tabs, Tab } from "../parts";
+import { useNavigate } from "react-router-dom";
 import { getCurrentUser, getUserTabs } from "../utils";
 import { Logout } from "../components";
 
@@ -59,7 +60,10 @@ const Dashboard = () => {
           <Tabs>{currentUser ? renderTabs(tabs) : ""}</Tabs>
           <Tab icon="logout" text="Logout" onClick={handleLogout} />
         </Sidebar>
-        <Workspace activeTab={activeTab} />
+        <div className="workspace container glass">
+          <span className="workspace-title">{activeTab}</span>
+          <Outlet />
+        </div>
       </DashboardBody>
 
       <section className="dash-main"></section>
