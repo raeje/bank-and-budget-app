@@ -1,6 +1,7 @@
 .workspace {
+  background-color: var(--secondary);
   height: 95%;
-  width: 95%;
+  width: 92%;
   margin: auto;
   padding: 25px;
 
@@ -8,21 +9,26 @@
   grid-template-rows: 10% 1fr;
   grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
+  position: relative;
+  left: 17px;
 }
+
 .workspace-title {
   grid-column: span 2;
-  font-size: 60px;
-  font-weight: 700;
-  background-color: var(--yellow);
-  color: var(--white);
-  text-align: start;
-  border-radius: 5px;
+  font-size: 55px;
+  font-weight: 500;
+  background-color: var(--third);
+  color: var(--highlight);
+  text-align: center;
+  
+  border-radius: 15px;
+  text-transform: uppercase;
 }
 
 .panel {
   height: 100%;
   width: 100%;
-  padding: 20px 50px;
+  padding: 30px 50px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 20% 1fr 10% 10%;
@@ -36,18 +42,50 @@
   place-items: center;
 }
 
-.account-number, .balance-value, .amount{
+.search-input {
+  height: 30%;
+}
+
+.search-label {
+  font-size: 25px;
+}
+
+.account-number {
+  font-size: 40px;
+  background-color: var(--white);
+  color: black;
+  appearance: none;
+  text-align: center;
+  padding: 0 10px;
+  margin: 0 0 30px 0;
+
+  outline: var(--highlight);
+  border: 3px solid var(--highlight);
+  border-radius: 15px;
+}
+
+.balance-text {
+  font-size: 25px;
+  margin: 0 0 35px 0;
+}
+
+.amount-text {
+  font-size: 25px;
+  margin: 15px 0 15px 0;
+}
+
+.balance-value, .amount{
   width: 100%;
   height: 100%;
   font-size: 40px;
   background-color: var(--white);
-  color: var(--black);
+  color: black;
   appearance: none;
   text-align: center;
   padding: 0 10px;
 
-  outline: var(--yellow);
-  border: 3px solid var(--yellow);
+  outline: var(--highlight);
+  border: 3px solid var(--highlight);
   border-radius: 15px;
 }
 
@@ -61,13 +99,19 @@
 
 .amount {
   height: max-content;
+
 }
 
 .balance-value {
-  background-color: var(--yellow);
-  color: var(--black);
+  background-color: var(--highlight);
+  color: var(--primary);
 }
 
 .account-number::-webkit-calendar-picker-indicator {
   display:none !important;
+}
+
+.btn:hover {
+  color: var(--highlight);
+  border: 1px solid var(--highlight);
 }

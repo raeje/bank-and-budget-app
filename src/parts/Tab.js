@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Tab.css";
 import { Icons } from "../components";
 
@@ -9,15 +9,16 @@ const Tab = (props) => {
     return "/home";
   };
   return (
-    <Link
+    <NavLink
       to={destination(props.icon)}
       className={props.icon + "-btn tab container"}
       id={props.icon}
       onClick={props.onClick}
+      style={{ textDecoration: 'none' }}
     >
       <Icons name={props.icon} />
       {props.text}
-    </Link>
+    </NavLink>
   );
 };
 

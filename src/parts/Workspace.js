@@ -10,7 +10,7 @@ const Workspace = ({ activeTab = "deposit" }) => {
   }, [activeTab]);
 
   return (
-    <div className="workspace container glass">
+    <div className="workspace container">
       <span className="workspace-title">{type}</span>
       <Outlet />
     </div>

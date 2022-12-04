@@ -15,16 +15,18 @@ function TopNav(props) {
   return (
     <div className="main">
       <span className="abbr">{props.name}</span>
-      <button type="button" className="btn-load-data" onClick={handleLoadUsers}>
-        Load Data
-      </button>
-      <button
-        type="button"
-        className="btn-clear-data"
-        onClick={handleClearData}
-      >
-        Clear Data
-      </button>
+      <div className="load-clear-container">
+        <button type="button" className="btn-load-data" onClick={handleLoadUsers}>
+          Load Data
+        </button>
+        <button
+          type="button"
+          className="btn-clear-data"
+          onClick={handleClearData}
+        >
+          Clear Data
+        </button>
+      </div>
     </div>
   );
 }

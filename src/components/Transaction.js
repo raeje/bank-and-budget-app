@@ -59,7 +59,7 @@ const Transaction = ({ type }) => {
           <span className="balance-value">{balance}</span>
         </div>
         <div className="amount-container">
-          <label labelfor="amount">Amount: </label>
+          <label labelfor="amount" className="amount-text">Amount: </label>
           <input
             type="number"
             disabled={customer === undefined}

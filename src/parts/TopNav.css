@@ -10,9 +10,8 @@ html {
   padding: 10px 30px;
   color: var(--white);
 
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-gap: 10px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -20,6 +19,8 @@ html {
   font-size: 50px;
   font-weight: 900;
   font-family: var(--header-font);
+  color: var(--highlight);
+  margin: 0 0 0 15px;
 }
 
 button {
@@ -31,6 +32,11 @@ button {
   border: 1px solid var(--white);;
 }
 
-.btn-load-data {
-  grid-column: 9 / 10;
+.btn-load-data, .btn-clear-data {
+  padding: 10px 40px;
+  margin: 0 5px;
+}
+
+.load-clear-container {
+  margin: 0 10px;
 }
