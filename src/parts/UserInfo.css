@@ -1,8 +1,9 @@
 .user-info-container {
-  height: max-content;
-  background-color: var(--yellow);
+  height: 66%;
+  background-color: var(--third);
   border-radius: 15px;
-  padding: 30px 15px;
+  padding: 40px 40px 40px 40px;
+  margin: 25px 0;
   color: var(--white);
   font-size: 18px;
 
@@ -12,8 +13,12 @@
 }
 
 .field-value {
-  color: var(--black);
+  color: var(--highlight);
   font-weight: 700;
-  padding-left: 5px;
+  padding: 10px 5px;
   border-bottom: 1px dashed var(--white);
+}
+
+.field-name {
+  padding: 10px 0 0 0;
 }

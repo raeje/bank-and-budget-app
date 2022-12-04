@@ -46,9 +46,9 @@ const UserLookup = ({ customer, setCustomer, setNotif }) => {
   */
 
   return (
-    <div className="customer-info glass panel">
-      <div className="search-input">
-        <label labelfor="account-number">Search by account number: </label>
+    <div className="customer-info">
+      <div className="search-input glass">
+        <label labelfor="account-number" className="search-label">Search by account number: </label>
         <input
           type="text"
           className="account-number"

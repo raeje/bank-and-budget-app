@@ -1,9 +1,12 @@
 .sidebar-container {
-  height: 100%;
+  background-color: var(--secondary);
+  height: 95%;
   width: 100%;
   padding: 15px 10px;
+  margin: auto 40px;
 
   display: grid;
   grid-template-rows: 20% 70% 10%;
   grid-gap: 5px;
+  border-radius: 16px;
 }
