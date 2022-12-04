@@ -1,0 +1,48 @@
+const Budget = () => {
+  return (
+    <div className="budget-page glass">
+      <div className="budget-list glass">
+        <div className="budget-list-labels">
+          <span>Name</span>
+          <span>Amount</span>
+          <span>Actions</span>
+        </div>
+        <ul className="budget-container">
+          <li>Salary</li>
+          <li>3000</li>
+          <li></li>
+        </ul>
+      </div>
+      <div className="budget-info">
+        <div className="form-container glass">
+          <div className="budget-name-container">
+            <label labelfor="budget-name" className="budget-name-label">Name: </label>
+            <input
+              type="text"
+              className="budget-name"
+              required
+            />
+          </div>
+          <div className="budget-amount-container">
+            <label labelfor="budget-amount" className="budget-amount-label">Amount: </label>
+            <input
+              type="number"
+              className="budget-amount"
+              required
+            />
+          </div>
+          <button
+            type="button"
+            className="budget-btn"
+          >
+            ADD
+          </button>
+        </div>
+        <div className="budget-balance glass">
+          <span>Balance:</span>
+          <span>10000</span>
+        </div>
+      </div>
+    </div>
+  );
+};

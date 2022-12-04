@@ -1,0 +1,57 @@
+.budget-page {
+    background-color: var(--secondary);
+    width: 100%;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-gap: 25px;
+}
+
+.budget-list-labels {
+    width: 100%;
+    height: auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 30px 40px;
+    border-bottom: 3px solid var(--secondary);
+
+    display: grid;
+    grid-template-columns: 60% 28% 12%;
+}
+
+.budget-container {
+    width: 100%;
+    height: auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 0 40px;
+
+    display: grid;
+    grid-template-columns: 60% 28% 12%;
+}
+
+.budget-info {
+    width: 100%;
+    height: 50%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+}
+
+.budget-name-container, .budget-amount-container {
+    display: grid;
+    margin: auto;
+}
+
+.budget-btn {
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+.budget-balance {
+    display: grid;
+    place-items: center;
+}
