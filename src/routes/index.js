@@ -1,3 +1,4 @@
 import Home from "./Home";
 import Dashboard from "./Dashboard";
-export { Home, Dashboard };
+import Transfer from "./Transfer";
+export { Home, Dashboard, Transfer };

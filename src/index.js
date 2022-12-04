@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Dashboard } from "./routes";
+import { Home, Dashboard, Transfer } from "./routes";
 import { Transaction } from "./components";
 
 const router = createBrowserRouter([
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/withdraw",
         element: <Transaction type="withdraw" />,
+      },
+      {
+        path: "/dashboard/transfer",
+        element: <Transfer />,
       },
     ],
   },
