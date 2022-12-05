@@ -20,7 +20,7 @@
   background-color: var(--third);
   color: var(--highlight);
   text-align: center;
-  
+
   border-radius: 15px;
   text-transform: uppercase;
 }
@@ -51,6 +51,7 @@
 }
 
 .account-number {
+  width: 60%;
   font-size: 40px;
   background-color: var(--white);
   color: black;

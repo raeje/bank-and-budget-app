@@ -22,7 +22,7 @@ const getUserTabs = (user) => {
     withdraw: { icon: "withdraw", text: "Withdraw" },
     transfer: { icon: "transfer", text: "Transfer" },
     budget: { icon: "budget", text: "Budget" },
-    createUSer: { icon: "create-user", text: "CreateUser" },
+    createUser: { icon: "create-user", text: "Create User" },
   };
 
   const adminTabs = [tabs.profile, tabs.deposit, tabs.withdraw, tabs.transfer];

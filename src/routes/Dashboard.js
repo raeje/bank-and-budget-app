@@ -29,6 +29,7 @@ const Dashboard = () => {
   const handleTabClick = (tab) => {
     console.log("clicked", tab.target.id);
     setActiveTab(tab.target.id);
+    //this.forceUpdate();
   };
 
   const renderTabs = (tabs) => {

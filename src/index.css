@@ -9,6 +9,10 @@
   --white: rgb(249, 246, 238);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   --header-font: 'Cinzel', cursive;
 }
@@ -48,15 +52,19 @@ code {
 .notif {
   font-size: 14px;
   background-color: var(--white);
-  padding: 18px;
+  padding: 10px;
   border-radius: 15px;
 }
 .error {
   color: red;
+  border: 2px solid red;
+  animation: blink 2s infinite;
 }
 
 .success {
   color: green;
+  border: 2px solid green;
+  animation: blink 1s infinite;
 }
 
 .hidden {
@@ -68,3 +76,5 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+@keyframes blink { 50% { border-color:#fff ; }  }
