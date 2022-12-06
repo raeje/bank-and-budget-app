@@ -5,6 +5,7 @@ import {
   getFilteredUsersList,
   updateLocalStorage,
   updateUsersList,
+  generateAcctNum,
 } from "./Util";
 export {
   getUsers,
@@ -13,4 +14,5 @@ export {
   getFilteredUsersList,
   updateLocalStorage,
   updateUsersList,
+  generateAcctNum,
 };

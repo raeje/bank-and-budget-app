@@ -8,34 +8,20 @@ const UserInfo = (props) => {
     return "";
   }
 
-  /*
-  const displayInfo = (() => {
-    let info = (
+  const accountInfo = (() => {
+    if (!props.profile) {
+      return;
+    }
+    return (
       <>
-        <span className="field-name">First Name: </span>
-        <span className="field-value">{customer.fName}</span>
+        <span className="field-name acct-num">Account Number: </span>
+        <span className="field-value acct-num">{customer.acctNum}</span>
 
-        <span className="field-name">Last Name: </span>
-        <span className="field-value">{customer.lName}</span>
-
-        <span className="field-name">Username: </span>
-        <span className="field-value">{customer.username}</span>
+        <span className="field-name balance">Balance: </span>
+        <span className="field-value balance">{customer.balance}</span>
       </>
     );
-    if (!props.transactionType) {
-      info += (
-        <>
-          <span className="field-name">Mobile: </span>
-          <span className="field-value">{customer.mobileNum}</span>
-
-          <span className="field-name">Role: </span>
-          <span className="field-value">{customer.role}</span>
-        </>
-      );
-    }
-    return info;
   })();
-  */
 
   const additionalInfo = (() => {
     if (props.transactionType) {
@@ -54,39 +40,22 @@ const UserInfo = (props) => {
 
   const displayInfo = (
     <>
+      {accountInfo}
       <span className="field-name">First Name: </span>
       <span className="field-value">{customer.fName}</span>
       <span className="field-name">Last Name: </span>
       <span className="field-value">{customer.lName}</span>
       <span className="field-name">Username: </span>
-      <span className="field-value">{customer.username}</span>{additionalInfo}
+      <span className="field-value">{customer.username}</span>
+      {additionalInfo}
     </>
   );
 
-  /*
-  if (customer) {
-    info = (
-      <div className="user-info-container">
-        <span className="field-name">First Name: </span>
-        <span className="field-value">{customer.fName}</span>
-
-        <span className="field-name">Last Name: </span>
-        <span className="field-value">{customer.lName}</span>
-
-        <span className="field-name">Username: </span>
-        <span className="field-value">{customer.username}</span>
-
-        <span className="field-name">Mobile: </span>
-        <span className="field-value">{customer.mobileNum}</span>
-
-        <span className="field-name">Role: </span>
-        <span className="field-value">{customer.role}</span>
-      </div>
-    );
-  }
-  */
-
-  return <div className="user-info-container">{displayInfo}</div>;
+  return (
+    <div className="user-info-container" id={props.profile ? "profile" : ""}>
+      {displayInfo}
+    </div>
+  );
 };
 
 export default UserInfo;

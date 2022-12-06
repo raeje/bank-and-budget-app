@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { getCurrentUser, getUserTabs } from "../utils";
 import { Logout } from "../components";
 
-const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState();
+const Dashboard = ({ defaultTab = "profile" }) => {
+  const [activeTab, setActiveTab] = useState(defaultTab);
   const currentUser = getCurrentUser();
   const tabs = getUserTabs(currentUser);
 
@@ -61,8 +61,10 @@ const Dashboard = () => {
           <Tabs>{currentUser ? renderTabs(tabs) : ""}</Tabs>
           <Tab icon="logout" text="Logout" onClick={handleLogout} />
         </Sidebar>
-        <div className="workspace container glass">
-          <span className="workspace-title">{activeTab}</span>
+        <div className={`workspace container glass ${activeTab}`}>
+          <span className="workspace-title">
+            {activeTab === "user-management" ? "Manage Users" : activeTab}
+          </span>
           <Outlet />
         </div>
       </DashboardBody>

@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { UserInfo } from "../parts";
+import { getCurrentUser } from "../utils";
+import "./Profile.css";
 
 const Profile = () => {
-  return "";
+  const [currentUser, setCurrentUser] = useState(getCurrentUser());
+
+  useEffect(() => {
+    setCurrentUser(getCurrentUser);
+  }, []);
+
+  return <UserInfo customer={currentUser} profile="true" />;
 };
 
 export default Profile;

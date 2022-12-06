@@ -23,7 +23,7 @@ const LoginForm = () => {
     if (currentUser) {
       console.log("LoginForm", currentUser);
       //navigate("/dashboard", { state: currentUser, replace: true });
-      navigate("/dashboard", { replace: true });
+      navigate("/dashboard/profile", { replace: true });
     }
   };
 

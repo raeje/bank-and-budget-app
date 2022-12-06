@@ -18,6 +18,8 @@ html {
 }
 
 body {
+  height: 100vh;
+  max-height: 100vh;
   background-color: var(--primary);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -39,6 +41,11 @@ button {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+i {
+  font-size: 20px;
+  text-align: center;
 }
 
 .glass {
@@ -69,6 +76,10 @@ code {
 
 .hidden {
   visibility: hidden;
+}
+
+.workspace {
+  max-height: 85vh;
 }
 
 input::-webkit-outer-spin-button,

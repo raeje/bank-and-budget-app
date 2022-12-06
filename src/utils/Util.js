@@ -23,9 +23,16 @@ const getUserTabs = (user) => {
     transfer: { icon: "transfer", text: "Transfer" },
     budget: { icon: "budget", text: "Budget" },
     createUser: { icon: "create-user", text: "Create User" },
+    userManagement: { icon: "user-management", text: "Manage Users" },
   };
 
-  const adminTabs = [tabs.profile, tabs.deposit, tabs.withdraw, tabs.transfer];
+  const adminTabs = [
+    tabs.profile,
+    tabs.userManagement,
+    tabs.deposit,
+    tabs.withdraw,
+    tabs.transfer,
+  ];
   const customerTabs = [tabs.profile, tabs.budget];
 
   return user.role === "admin" ? adminTabs : customerTabs;
@@ -62,6 +69,23 @@ const updateUsersList = (username, item, value) => {
   console.log(`Updated ${username.toUpperCase()}'s ${item} to ${value}!`);
 };
 
+const generateAcctNum = () => {
+  const existingAcctNums = getUsers().map((u) => u.acctNum);
+  const acctNum = () => {
+    return Math.floor(Math.random(8) * 100000000);
+  };
+
+  let newAcctNum;
+  let acctNumExists = true;
+  while (acctNumExists) {
+    newAcctNum = acctNum();
+    acctNumExists = existingAcctNums.includes(newAcctNum);
+    console.log(newAcctNum, acctNumExists);
+  }
+
+  return newAcctNum;
+};
+
 export {
   getUsers,
   getCurrentUser,
@@ -69,4 +93,5 @@ export {
   getFilteredUsersList,
   updateLocalStorage,
   updateUsersList,
+  generateAcctNum,
 };

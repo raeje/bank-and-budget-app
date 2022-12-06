@@ -8,7 +8,7 @@
     "mobileNum": "0917123123",
     "acctNum": "001",
     "role": "admin",
-    "isLoggedIn": false
+    "isLoggedIn": true
   },
   {
     "username": "neds",

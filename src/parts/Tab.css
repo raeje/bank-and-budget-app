@@ -20,11 +20,6 @@
   border: 1px solid var(--highlight);
 }
 
-i {
-  font-size: 25px;
-  text-align: center;
-}
-
 .logout-btn {
   height: 85%;
   width: 100%;
