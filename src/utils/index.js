@@ -6,6 +6,8 @@ import {
   updateLocalStorage,
   updateUsersList,
   generateAcctNum,
+  validateFields,
+  domValue,
 } from "./Util";
 export {
   getUsers,
@@ -15,4 +17,6 @@ export {
   updateLocalStorage,
   updateUsersList,
   generateAcctNum,
+  validateFields,
+  domValue,
 };
