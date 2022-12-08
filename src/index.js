@@ -3,7 +3,14 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Dashboard, Transfer, Budget, UserManagement, Profile } from "./routes";
+import {
+  Home,
+  Dashboard,
+  Transfer,
+  Budget,
+  UserManagement,
+  Profile,
+} from "./routes";
 import { Transaction } from "./components";
 
 const router = createBrowserRouter([
