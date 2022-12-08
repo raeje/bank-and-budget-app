@@ -14,7 +14,7 @@ const Tab = (props) => {
       className={props.icon + "-btn tab container"}
       id={props.icon}
       onClick={props.onClick}
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: "none" }}
     >
       <Icons name={props.icon} />
       {props.text}

@@ -41,7 +41,6 @@ const getUserTabs = (user) => {
 const getFilteredUsersList = (key, value) => {
   const users = getUsers();
   let filteredList = [];
-  console.log("debug", key, value, users);
   filteredList = users.filter((user) => user[key].includes(value));
   return filteredList;
 };
@@ -106,7 +105,6 @@ const validateField = (field, setNotif, isNewUser) => {
   const [key, val] = [Object.keys(field)[0], Object.values(field)[0]];
 
   if (!val || val.length === 0) {
-    console.log("validateField", key, false);
     setNotif({ status: "error", message: `${key} is required.` });
     return false;
   }
@@ -153,7 +151,6 @@ const validateField = (field, setNotif, isNewUser) => {
     // mobileNum already exists
     const filteredUser = getFilteredUsersList("mobileNum", mobileNum)[0];
     if (filteredUser && filteredUser.mobileNum === mobileNum) {
-      console.log(filteredUser);
       setNotif({
         status: "error",
         message: `${message}; already registered.`,
