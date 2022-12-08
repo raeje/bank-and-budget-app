@@ -111,14 +111,12 @@ const validateField = (field, setNotif, isNewUser) => {
     return false;
   }
 
-  if (key === "First Name") {
-    setNotif({ status: "error", message: "First Name is required." });
-    //return false;
-  }
-
-  if (key === "Last Name") {
-    setNotif({ status: "error", message: "Last Name is required." });
-    //return false;
+  if (key === "Balance") {
+    if (val <= 0) {
+      setNotif({ status: "error", message: `${key} must be greater than 0.` });
+      return false;
+    }
+    return true;
   }
 
   if (key === "Mobile Number") {
@@ -176,13 +174,15 @@ const validateField = (field, setNotif, isNewUser) => {
     }
     // username is empty
     if (!username || username.length === 0) {
-      setNotif({ status: "error", message: "Username is required." });
+      setNotif({
+        status: "error",
+        message: `Invalid username ('${username}'); must be at least 3 characters long`,
+      });
       return false;
     }
     // username already exists
     const user = getFilteredUsersList("username", username)[0];
     if (user && user.username === username) {
-      console.log("this should appear");
       setNotif({
         status: "error",
         message: `Invalid username ('${username}'); already exists.`,
@@ -193,13 +193,14 @@ const validateField = (field, setNotif, isNewUser) => {
   }
 
   if (key === "Password") {
-    //setNotif({ status: "error", message: "Password is required." });
-    //return false;
-  }
-
-  if (key === "Role") {
-    //setNotif({ status: "error", message: "Role is required." });
-    //return false;
+    if (val.length < 8) {
+      setNotif({
+        status: "error",
+        message: `Invalid password; must be at least 8 characters long.`,
+      });
+      return false;
+    }
+    return true;
   }
 
   return true;
