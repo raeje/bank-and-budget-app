@@ -68,6 +68,19 @@ const updateUsersList = (username, item, value) => {
   console.log(`Updated ${username.toUpperCase()}'s ${item} to ${value}!`);
 };
 
+const getLocalBudget = () => {
+  let budget = localStorage.getItem("budget");
+  budget = budget ? JSON.parse(localStorage.budget) : [];
+  return budget;
+};
+
+const getFilteredBudgetList = (key, value) => {
+  const budgetList = getLocalBudget();
+  let filteredList = [];
+  filteredList = budgetList.filter((budget) => budget[key] === value);
+  return filteredList;
+};
+
 const generateAcctNum = () => {
   const existingAcctNums = getUsers().map((u) => u.acctNum);
   const acctNum = () => {
@@ -210,6 +223,8 @@ export {
   getFilteredUsersList,
   updateLocalStorage,
   updateUsersList,
+  getLocalBudget,
+  getFilteredBudgetList,
   generateAcctNum,
   validateFields,
   domValue,

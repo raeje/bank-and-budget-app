@@ -1,0 +1,184 @@
+.budget-page {
+    background-color: var(--secondary);
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    gap: 1.5rem;
+    max-height: 90%;
+    min-height: 100%;
+}
+
+.input-balance-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.budget-list {
+    width: 60%;
+}
+
+.budget-list-labels {
+    width: 100%;
+    height: auto;
+    padding: 30px 40px;
+    border-bottom: 3px solid var(--secondary);
+
+    display: grid;
+    grid-template-columns: 60% 28% 12%;
+}
+
+.all-items-container {
+    height: 75%;
+    max-height: 75%;
+    overflow-y: scroll;
+    border-bottom: 3px solid var(--secondary);
+}
+
+.budget-container {
+    width: 100%;
+    height: auto;
+    padding: 0 40px;
+
+    display: grid;
+    grid-template-columns: 60% 28% 12%;
+}
+
+.item-date {
+    font-size: 0.6rem;
+    opacity: 0.5;
+    display: block;
+}
+
+.budget-info {
+    height: 55%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+}
+
+.budget-name-container, .budget-amount-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 20%;
+    padding: 0 20px;
+    margin: 20px 0;
+}
+
+.budget-name, .budget-amount {
+    font-size: 1rem;
+    background-color: var(--white);
+    color: black;
+    appearance: none;
+    padding-left: 0.6rem;
+
+    outline: var(--highlight);
+    border: 3px solid var(--highlight);
+    border-radius: 15px;
+}
+
+.budget-type-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.budget-income-label {
+    margin-left: 2.5rem;
+}
+
+.expense-radio, .income-radio {
+    cursor: pointer;
+}
+
+.budget-submit-btn {
+    width: 100%;
+}
+
+.budget-submit-btn:hover {
+    color: var(--highlight);
+    border: 1px solid var(--highlight);
+}
+
+.budget-balance {
+    height: 45%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.budget-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.budget-balance-total, .proj-balance-total {
+    background-color: var(--highlight);
+    color: var(--primary);
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    color: black;
+    appearance: none;
+    text-align: center;
+    padding: 0 10px;
+
+    outline: var(--highlight);
+    border: 3px solid var(--highlight);
+    border-radius: 15px;
+}
+
+.balance-info, .projected-balance {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    padding: 0 1.5rem;
+    gap: 1rem;
+}
+
+.budget-balance-label, .proj-balance-label {
+    font-size: 1.5rem;
+}
+
+.total-amount-container {
+    display: grid;
+    grid-template-columns: 60% 28% 12%;
+    align-items: center;
+    padding: 1.563rem 2.5rem;
+}
+
+.budget-notif {
+    color: black;
+    width: 100%;
+    height: 10%;
+}
+
+.error {
+    color: red;
+}
+
+.notif-btn-container > .notif {
+    height: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.notif-btn-container {
+    height: 30%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+}
+
+
+
