@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "category": "Parking",
+        "amount": "40",
+        "type": "EXPENSE"
+    },
+    {
+        "id": "2",
+        "category": "Salary",
+        "amount": "15000",
+        "type": "INCOME"
+    }
+]

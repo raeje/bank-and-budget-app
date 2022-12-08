@@ -1,10 +1,12 @@
 import React from "react";
 import "./TopNav.css";
 import data from "../data/users.json";
+import budget from "../data/budget.json";
 import { LoadData, ClearData } from "../components/";
 
 const handleLoadUsers = () => {
   LoadData("users", data);
+  LoadData("budget", budget);
 };
 
 const handleClearData = () => {

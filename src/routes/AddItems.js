@@ -1,25 +1,44 @@
 import React, { useState } from "react";
 import "./Budget.css";
+import { getCurrentUser, updateLocalStorage, getLocalBudget } from "../utils";
+import { Notifications } from "../parts";
 
-const AddItems = (props) => {
-    const [name, setName] = useState();
-    const [amount, setAmount] = useState();
+const AddItems = () => {
+    const [category, setCategory] = useState("");
+    const [amount, setAmount] = useState("");
     const [type, setType] = useState("EXPENSE");
+    const [notif, setNotif] = useState({ status: undefined, message: undefined });
+
+    const username = getCurrentUser().username;
+
+    let localBudget = getLocalBudget();
+    console.log(localBudget);
 
     const AddTransaction = () => {
-        console.log({ name, amount, type });
-    }
+        if (amount < 0) {
+            setNotif({ status: "error", message: "Amount must be greater than 0" });
+            setCategory("");
+            setAmount("");
+            return;
+        }
+        localBudget.push({ username, category, amount, type });
+        console.log(localBudget);
+        updateLocalStorage("budget", localBudget);
+        setNotif({ status: undefined, message: undefined });
+        setCategory("");
+        setAmount("");
+    };
 
     return (
         <div className="budget-info">
             <div className="form-container glass">
                 <div className="budget-name-container">
-                    <label labelfor="budget-name" className="budget-name-label">Name: </label>
+                    <label labelfor="budget-name" className="budget-name-label">Category: </label>
                     <input
                     type="text"
                     className="budget-name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
                     required
                     />
                 </div>
@@ -44,7 +63,7 @@ const AddItems = (props) => {
                         onChange={(e) => setType(e.target.value)}
                         required
                     />
-                    <label labelfor="income">Income</label>
+                    <label labelfor="income" className="budget-income-label">Income</label>
                     <input
                         type="radio"
                         className="income-radio"
@@ -55,9 +74,10 @@ const AddItems = (props) => {
                         required
                     />
                 </div>
+                <Notifications status={notif.status} message={notif.message} />
                 <button
                     type="button"
-                    className="budget-btn"
+                    className="budget-submit-btn"
                     onClick={AddTransaction}
                 >
                     ADD
