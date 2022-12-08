@@ -8,14 +8,18 @@ import { Logout } from "../components";
 
 const Dashboard = () => {
   const childURL = window.location.pathname.match(/.+\/(.*$)/)[1];
-  const workspaceClassName = `workspace container glass ${childURL}`;
-  const [workspace, setWorkspace] = useState();
+  const workspace = `workspace container glass ${childURL}`;
+  const [workspaceClassName, setWorkspaceClassName] = useState();
   const currentUser = getCurrentUser();
   const tabs = getUserTabs(currentUser);
 
+  console.log(
+    tabs.map((tab) => tab.icon),
+    childURL
+  );
+
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(currentUser);
     if (!currentUser) {
       navigate("/home", { replace: true });
       return;
@@ -23,7 +27,7 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
-    setWorkspace(workspaceClassName);
+    setWorkspaceClassName(workspace);
   }, [childURL]);
 
   const handleLogout = () => {
@@ -58,7 +62,7 @@ const Dashboard = () => {
           <Tab icon="logout" text="Logout" onClick={handleLogout} />
         </Sidebar>
 
-        <div className={`${workspace}`}>
+        <div className={`${workspaceClassName}`}>
           <span className="workspace-title">
             {childURL === "user-management" ? "Manage Users" : childURL}
           </span>

@@ -10,6 +10,7 @@ import {
   Budget,
   UserManagement,
   Profile,
+  ErrorPage,
 } from "./routes";
 import { Transaction } from "./components";
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <ErrorPage type="lost" />,
   },
   {
     path: "/home",

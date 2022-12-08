@@ -25,6 +25,7 @@ label {
 }
 
 .login-form-container input {
+  font-family: var(--font-secondary);
   color: var(--secondary);
   padding-left: 5%;
 }

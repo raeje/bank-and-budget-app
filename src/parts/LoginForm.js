@@ -9,7 +9,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
-  const [notif, setNotif] = useState({ undefined, undefined });
+  const [notif, setNotif] = useState({ status: undefined, message: undefined });
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
