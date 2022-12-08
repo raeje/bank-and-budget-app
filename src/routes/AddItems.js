@@ -20,6 +20,11 @@ const AddItems = () => {
             setCategory("");
             setAmount("");
             return;
+        } else if (category === '' && amount === '') {
+            setNotif({ status: "error", message: "Category and amount cannot be empty" });
+            setCategory("");
+            setAmount("");
+            return;
         }
         localBudget.push({ username, category, amount, type });
         console.log(localBudget);
