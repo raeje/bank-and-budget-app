@@ -18,38 +18,52 @@
 
 .budget-list {
     width: 60%;
+    display: grid;
+    grid-template-rows: 15% 76% 9%;
+    grid-template-columns: 60% 28% 12%;
 }
 
 .budget-list-labels {
     width: 100%;
     height: auto;
-    padding: 30px 40px;
+    align-items: center;
+    padding: 0 2.5rem;
     border-bottom: 3px solid var(--secondary);
+    grid-column-start: 1;
+    grid-column-end: 4;
 
     display: grid;
     grid-template-columns: 60% 28% 12%;
 }
 
 .all-items-container {
-    height: 75%;
-    max-height: 75%;
+    height: 100%;
+    max-height: 100%;
     overflow-y: scroll;
     border-bottom: 3px solid var(--secondary);
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .budget-container {
     width: 100%;
     height: auto;
-    padding: 0 40px;
+    padding: 0 2.5rem;
 
     display: grid;
     grid-template-columns: 60% 28% 12%;
 }
 
+
 .item-date {
     font-size: 0.6rem;
     opacity: 0.5;
     display: block;
+}
+
+.form-container {
+    display: grid;
+    grid-template-rows: 25% 25% 20% 30%;
 }
 
 .budget-info {
@@ -63,11 +77,11 @@
 
 .budget-name-container, .budget-amount-container {
     display: grid;
-    grid-template-columns: 1fr;
+    align-items: center;
     width: 100%;
-    height: 20%;
+    height: 100%;
     padding: 0 20px;
-    margin: 20px 0;
+    margin: 0.5rem 0;
 }
 
 .budget-name, .budget-amount {
@@ -75,7 +89,7 @@
     background-color: var(--white);
     color: black;
     appearance: none;
-    padding-left: 0.6rem;
+    padding: 0.4rem 1rem;
 
     outline: var(--highlight);
     border: 3px solid var(--highlight);
@@ -85,7 +99,7 @@
 .budget-type-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
     gap: 10px;
 }
 
@@ -109,28 +123,32 @@
 .budget-balance {
     height: 45%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-rows: 50% 50%;
 }
 
 .budget-actions {
     display: flex;
     justify-content: center;
     gap: 10px;
+    position: relative;
+    right: 0.5rem;
 }
 
 .budget-balance-total, .proj-balance-total {
     background-color: var(--highlight);
     color: var(--primary);
+    max-width: 100%;
+    min-width: 100%;
     width: 100%;
-    height: 100%;
+    height: 40%;
     font-size: 2rem;
     color: black;
     appearance: none;
-    text-align: center;
     padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     outline: var(--highlight);
     border: 3px solid var(--highlight);
@@ -146,15 +164,22 @@
     gap: 1rem;
 }
 
+.budget-balance-label {
+    margin-top: 1rem;
+}
+
 .budget-balance-label, .proj-balance-label {
     font-size: 1.5rem;
 }
 
 .total-amount-container {
     display: grid;
+    height: 100%;
+    padding: 0 2.5rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
     grid-template-columns: 60% 28% 12%;
     align-items: center;
-    padding: 1.563rem 2.5rem;
 }
 
 .budget-notif {
@@ -168,15 +193,17 @@
 }
 
 .notif-btn-container > .notif {
-    height: 75%;
+    height: 30%;
     display: flex;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .notif-btn-container {
-    height: 30%;
-    display: grid;
-    grid-template-columns: 1fr;
+    height: 100%;
+    display: block;
+    grid-row-start: 4;
+    grid-row-end: 5;
     padding: 0 1rem;
 }
 
