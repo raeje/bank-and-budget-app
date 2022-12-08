@@ -74,14 +74,16 @@ const AddItems = () => {
                         required
                     />
                 </div>
-                <Notifications status={notif.status} message={notif.message} />
-                <button
-                    type="button"
-                    className="budget-submit-btn"
-                    onClick={AddTransaction}
-                >
-                    ADD
-                </button>
+                <div className="notif-btn-container">
+                    <Notifications status={notif.status} message={notif.message} />
+                    <button
+                        type="button"
+                        className="budget-submit-btn"
+                        onClick={AddTransaction}
+                    >
+                        ADD
+                    </button>
+                </div>
             </div>
         </div>
     );

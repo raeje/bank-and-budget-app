@@ -98,8 +98,7 @@
 }
 
 .budget-submit-btn {
-    width: 90%;
-    margin: 2rem 0 0 1.6rem;
+    width: 100%;
 }
 
 .budget-submit-btn:hover {
@@ -166,6 +165,19 @@
 
 .error {
     color: red;
+}
+
+.notif-btn-container > .notif {
+    height: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.notif-btn-container {
+    height: 30%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
 }
 
 
