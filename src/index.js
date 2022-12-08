@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Dashboard, Transfer, Budget } from "./routes";
+import { Home, Dashboard, Transfer, Budget, UserManagement, Profile } from "./routes";
 import { Transaction } from "./components";
 
 const router = createBrowserRouter([
@@ -19,6 +19,14 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
     children: [
+      {
+        path: "/dashboard/profile",
+        element: <Profile profile="true" />,
+      },
+      {
+        path: "/dashboard/user-management",
+        element: <UserManagement />,
+      },
       {
         path: "/dashboard/deposit",
         element: <Transaction type="deposit" />,

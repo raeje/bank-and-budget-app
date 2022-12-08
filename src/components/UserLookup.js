@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import { getFilteredUsersList } from "../utils";
 import { UserInfo } from "../parts";
 
-const UserLookup = ({ customer, setCustomer, setNotif }) => {
+const UserLookup = ({
+  id = 0,
+  customer,
+  setCustomer,
+  setNotif,
+  transactionType = undefined,
+}) => {
   const [accountNumber, setAccountNumber] = useState();
   const [accountNumberOptions, setAccountNumberOptions] = useState(); // dropdown list of account numbers
 
@@ -48,20 +54,22 @@ const UserLookup = ({ customer, setCustomer, setNotif }) => {
   return (
     <div className="customer-info">
       <div className="search-input glass">
-        <label labelfor="account-number" className="search-label">Search by account number: </label>
+        <label labelfor="account-number" className="search-label">
+          Search by account number:{" "}
+        </label>
         <input
           type="text"
           className="account-number"
-          id="account-number"
-          list="accounts"
+          id={"account-number-" + id}
+          list={"accounts-" + id}
           autoComplete="off"
           maxLength="8"
           onChange={(e) => handleAcctNumChange(e)}
         />
-        <datalist id="accounts">{accountNumberOptions}</datalist>
+        <datalist id={"accounts-" + id}>{accountNumberOptions}</datalist>
       </div>
 
-      <UserInfo customer={customer} />
+      <UserInfo customer={customer} transactionType={transactionType} />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import Tab from "./Tab";
 import Workspace from "./Workspace";
 import UserInfo from "./UserInfo";
 import Notifications from "./Notification";
+import UserManagementHeader from "./UserManagementHeader";
 
 export {
   TopNav,
@@ -22,4 +23,5 @@ export {
   Workspace,
   UserInfo,
   Notifications,
+  UserManagementHeader,
 };

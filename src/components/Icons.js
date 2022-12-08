@@ -8,6 +8,10 @@ const Icons = (props) => {
     icon = <i className="fa-solid fa-user"></i>;
   }
 
+  if (name === "user-management") {
+    icon = <i className="fa-solid fa-users-gear"></i>;
+  }
+
   if (name === "deposit") {
     icon = <i className="fa-solid fa-piggy-bank"></i>;
   }

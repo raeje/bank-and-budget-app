@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const currentUser = getCurrentUser();
     if (currentUser) {
-      navigate("/dashboard", { replace: true });
+      navigate("/dashboard/profile", { replace: true });
     }
   }, []);
 

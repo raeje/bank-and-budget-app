@@ -7,6 +7,9 @@ import {
   updateUsersList,
   getLocalBudget,
   getFilteredBudgetList,
+  generateAcctNum,
+  validateFields,
+  domValue,
 } from "./Util";
 export {
   getUsers,
@@ -17,4 +20,7 @@ export {
   updateUsersList,
   getLocalBudget,
   getFilteredBudgetList,
+  generateAcctNum,
+  validateFields,
+  domValue,
 };
