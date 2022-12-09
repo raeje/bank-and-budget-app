@@ -1,5 +1,4 @@
 const ChangeTheme = (change) => {
-  console.log("changing theme...", change);
   const root = document.querySelector(":root");
   const darkWhite = "rgb(249, 246, 238)";
   const darkPrimary = "rgb(14, 17, 23)";

@@ -226,6 +226,11 @@ const authenticateUser = (tabs, childURL, role) => {
   }
 };
 
+const getSavedTheme = () => {
+  const savedTheme = JSON.parse(localStorage.getItem("darkTheme"));
+  return savedTheme;
+};
+
 export {
   getUsers,
   getCurrentUser,
@@ -239,4 +244,5 @@ export {
   validateFields,
   domValue,
   authenticateUser,
+  getSavedTheme,
 };

@@ -11,6 +11,7 @@ import {
   validateFields,
   domValue,
   authenticateUser,
+  getSavedTheme,
 } from "./Util";
 export {
   getUsers,
@@ -25,4 +26,5 @@ export {
   validateFields,
   domValue,
   authenticateUser,
+  getSavedTheme,
 };
