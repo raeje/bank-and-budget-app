@@ -12,6 +12,13 @@ const AddItems = ({ setBudgetList }) => {
   const username = getCurrentUser().username;
   let localBudget = getLocalBudget();
 
+
+  const date = new Date();
+  const formattedDate = date.toLocaleDateString("UTC", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
   const AddTransaction = () => {
     if (amount < 0) {
       setNotif({ status: "error", message: "Amount must be greater than 0" });
@@ -27,7 +34,7 @@ const AddItems = ({ setBudgetList }) => {
       setAmount("");
       return;
     }
-    localBudget.push({ username, category, amount, type });
+    localBudget.push({ username, category, amount, type, date: formattedDate });
     setBudgetList(localBudget);
     updateLocalStorage("budget", localBudget);
     setNotif({ status: undefined, message: undefined });

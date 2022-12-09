@@ -17,12 +17,10 @@ const ItemList = ({ list }) => {
     updateLocalStorage("budget", newBudgetItems);
   };
 
-  // Function to update the category or amount of an item
   const updateBudgetItem = (event, item) => {
     const updatedBudgetItems = budgetItems.map((budgetItem) => {
       if (budgetItem !== item) return budgetItem;
 
-      // Update the category or amount of the selected item
       return {
         ...budgetItem,
         [event.target.name]: event.target.value,
@@ -32,12 +30,10 @@ const ItemList = ({ list }) => {
     updateLocalStorage("budget", updatedBudgetItems);
   };
 
-  // Function to toggle the edit mode for an item
   const toggleEditMode = (item) => {
     const updatedBudgetItems = budgetItems.map((budgetItem) => {
       if (budgetItem !== item) return budgetItem;
 
-      // Toggle the edit mode for the selected item
       return {
         ...budgetItem,
         isEditing: !budgetItem.isEditing,
@@ -57,13 +53,6 @@ const ItemList = ({ list }) => {
   }
 
   let totalAmountPesoSign = `₱${totalAmount}`;
-
-  const date = new Date();
-  const formattedDate = date.toLocaleDateString("UTC", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  });
 
   return (
     <div className="budget-list glass">
@@ -87,7 +76,7 @@ const ItemList = ({ list }) => {
               ) : (
                 <li>{item.category}</li>
               )}
-              <span className="item-date">{formattedDate}</span>
+              <span className="item-date">{item.date}</span>
             </div>
             {item.isEditing ? (
               <input
