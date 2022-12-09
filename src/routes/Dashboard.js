@@ -16,14 +16,16 @@ const Dashboard = () => {
   const tabs = getUserTabs(currentUser);
 
   const navigate = useNavigate();
-  authenticateUser(tabs, childURL, currentUser.role);
-
   useEffect(() => {
     if (!currentUser) {
       navigate("/home", { replace: true });
       return;
     }
   }, []);
+
+  if (tabs) {
+    authenticateUser(tabs, childURL, currentUser.role);
+  }
 
   useEffect(() => {
     setWorkspaceClassName(workspace);

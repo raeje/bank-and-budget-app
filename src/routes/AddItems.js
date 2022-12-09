@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Budget.css";
 import { getCurrentUser, updateLocalStorage, getLocalBudget } from "../utils";
 import { Notifications } from "../parts";
+import { useNavigate } from "react-router-dom";
 
 const AddItems = ({ setBudgetList }) => {
   const [category, setCategory] = useState("");
@@ -9,9 +10,16 @@ const AddItems = ({ setBudgetList }) => {
   const [type, setType] = useState("EXPENSE");
   const [notif, setNotif] = useState({ status: undefined, message: undefined });
 
-  const username = getCurrentUser().username;
+  const user = getCurrentUser();
+  const username = user ? user.username : undefined;
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      navigate("/home", { replace: true });
+      return;
+    }
+  }, []);
   let localBudget = getLocalBudget();
-
 
   const date = new Date();
   const formattedDate = date.toLocaleDateString("UTC", {

@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import AddItems from "./AddItems";
 import SetBudget from "./SetBudget";
 import "./Budget.css";
 import { getCurrentUser, getFilteredBudgetList } from "../utils/Util";
+import { useNavigate } from "react-router-dom";
 
 const Budget = () => {
   const user = getCurrentUser();
-  const localBudgetList = getFilteredBudgetList("username", user.username);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      navigate("/home", { replace: true });
+      return;
+    }
+  }, []);
+
+  const localBudgetList = (() => {
+    if (user) {
+      return getFilteredBudgetList("username", user.username);
+    }
+    return [];
+  })();
+
   const [budgetList, setBudgetList] = useState(localBudgetList);
 
   return (
