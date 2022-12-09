@@ -18,10 +18,10 @@
 }
 
 .home-footer {
-  background-color: rgb(12, 11, 19);
+  background-color: inherit;
   height: 30vh;
   width: 80vw;
-  color: white;
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;

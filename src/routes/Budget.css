@@ -87,7 +87,7 @@
 .budget-name, .budget-amount {
     font-size: 1rem;
     background-color: var(--white);
-    color: black;
+    color: var(--primary);
     appearance: none;
     padding: 0.4rem 1rem;
 
@@ -143,7 +143,7 @@
     width: 100%;
     height: 40%;
     font-size: 2rem;
-    color: black;
+    color: var(--primary);
     appearance: none;
     padding: 0 10px;
     display: flex;
@@ -183,7 +183,7 @@
 }
 
 .budget-notif {
-    color: black;
+    color: var(--primary);
     width: 100%;
     height: 10%;
 }

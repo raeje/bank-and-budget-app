@@ -55,7 +55,7 @@
   width: 60%;
   font-size: 40px;
   background-color: var(--white);
-  color: black;
+  color: var(--primary);
   appearance: none;
   text-align: center;
   padding: 0 10px;
@@ -89,7 +89,7 @@
   height: 100%;
   font-size: 40px;
   background-color: var(--white);
-  color: black;
+  color: var(--primary);
   appearance: none;
   text-align: center;
 
