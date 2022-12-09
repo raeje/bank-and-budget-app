@@ -158,6 +158,7 @@ const UserManagement = () => {
     ];
     const result = validateFields(
       [
+        { Balance: balance },
         { "First Name": fName },
         { "Last Name": lName },
         { "Mobile Number": [mobileNum, acctNum] },
@@ -178,6 +179,7 @@ const UserManagement = () => {
       setModifyState(false);
       disableAddUserFields(true);
       disableEditableFields(false, "button.edit");
+      setNotif({ status: undefined, message: undefined });
     }
   };
 
@@ -207,6 +209,7 @@ const UserManagement = () => {
           min=".01"
           placeholder="0"
           className={`${className} balance`}
+          onWheel={(event) => event.currentTarget.blur()}
           onChange={(e) => {
             handleChange(setBalance, e);
           }}
@@ -285,15 +288,18 @@ const UserManagement = () => {
         <button
           className={`${user.acctNum} user-actions edit fa-solid fa-pen-to-square`}
           onClick={(e) => handleEdit(e)}
+          key={`${user.acctNum}-action-edit`}
           disabled={editMode}
         ></button>
         <button
           className={`${user.acctNum} user-actions delete fa-solid fa-trash-can fa-1x`}
           onClick={() => handleDelete(user.acctNum)}
+          key={`${user.acctNum}-action-delete`}
           disabled={user.role === "admin" ? true : false}
         ></button>
         <button
           className={`${user.acctNum} user-actions save fa-solid fa-floppy-disk`}
+          key={`${user.acctNum}-action-save`}
           id={`save-${user.acctNum}`}
           onClick={(e) => handleSaveEdit(e)}
         ></button>

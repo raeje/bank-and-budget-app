@@ -1,15 +1,11 @@
 import React from "react";
 import "./Budget.css";
-import {
-  getCurrentUser,
-  getLocalBudget,
-  getFilteredBudgetList,
-} from "../utils";
+import { getCurrentUser, getFilteredBudgetList } from "../utils";
 
 const SetBudget = () => {
-  const user = getCurrentUser(); //get the user logged in
+  const user = getCurrentUser();
 
-  const calculateBalance = (items) => { //gets the user balance then for each item in the list we minus or add
+  const calculateBalance = (items) => {
     let balance = user.balance;
 
     items.forEach((item) => {
@@ -20,12 +16,12 @@ const SetBudget = () => {
       }
     });
 
-    localStorage.setItem("balance", balance); //then we set it to localStorage
+    localStorage.setItem("balance", balance);
 
     return balance;
   };
 
-  const items = getFilteredBudgetList("username", user.username); 
+  const items = getFilteredBudgetList("username", user.username);
 
   const balance = calculateBalance(items);
 

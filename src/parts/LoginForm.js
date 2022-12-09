@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import Login from "../components/Login";
 import { getCurrentUser } from "../utils";
+import Notifications from "./Notification";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [notif, setNotif] = useState({ status: undefined, message: undefined });
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -18,7 +20,7 @@ const LoginForm = () => {
   };
 
   const handleLogin = () => {
-    Login({ username, password });
+    Login({ username, password, setNotif });
     const currentUser = getCurrentUser();
     if (currentUser) {
       console.log("LoginForm", currentUser);
@@ -40,7 +42,7 @@ const LoginForm = () => {
   }, []);
 
   return (
-    <div className="login-form-container">
+    <div className="login-form-container glass">
       <label htmlFor="username">USERNAME: </label>
       <input
         type="text"
@@ -59,7 +61,7 @@ const LoginForm = () => {
         required
       />
 
-      <span className="error-msg">ERROR: error!</span>
+      <Notifications status={notif.status} message={notif.message} />
 
       <button
         type="button"

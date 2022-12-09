@@ -6,19 +6,29 @@ import { useNavigate } from "react-router-dom";
 import { getCurrentUser, getUserTabs } from "../utils";
 import { Logout } from "../components";
 
-const Dashboard = ({ defaultTab = "profile" }) => {
-  const [activeTab, setActiveTab] = useState(defaultTab);
+const Dashboard = () => {
+  const childURL = window.location.pathname.match(/.+\/(.*$)/)[1];
+  const workspace = `workspace container glass ${childURL}`;
+  const [workspaceClassName, setWorkspaceClassName] = useState();
   const currentUser = getCurrentUser();
   const tabs = getUserTabs(currentUser);
 
+  console.log(
+    tabs.map((tab) => tab.icon),
+    childURL
+  );
+
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(currentUser);
     if (!currentUser) {
       navigate("/home", { replace: true });
       return;
     }
   }, []);
+
+  useEffect(() => {
+    setWorkspaceClassName(workspace);
+  }, [childURL]);
 
   const handleLogout = () => {
     Logout({ username: currentUser.username });
@@ -26,21 +36,11 @@ const Dashboard = ({ defaultTab = "profile" }) => {
     return;
   };
 
-  const handleTabClick = (tab) => {
-    console.log("clicked", tab.target.id);
-    setActiveTab(tab.target.id);
-    //this.forceUpdate();
-  };
-
   const renderTabs = (tabs) => {
     return tabs.map((tab) => {
       return (
         <li key={tab.icon}>
-          <Tab
-            icon={tab.icon}
-            text={tab.text}
-            onClick={(icon) => handleTabClick(icon)}
-          />
+          <Tab icon={tab.icon} text={tab.text} />
         </li>
       );
     });
@@ -61,9 +61,10 @@ const Dashboard = ({ defaultTab = "profile" }) => {
           <Tabs>{currentUser ? renderTabs(tabs) : ""}</Tabs>
           <Tab icon="logout" text="Logout" onClick={handleLogout} />
         </Sidebar>
-        <div className={`workspace container glass ${activeTab}`}>
+
+        <div className={`${workspaceClassName}`}>
           <span className="workspace-title">
-            {activeTab === "user-management" ? "Manage Users" : activeTab}
+            {childURL === "user-management" ? "Manage Users" : childURL}
           </span>
           <Outlet />
         </div>

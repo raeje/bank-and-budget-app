@@ -1,21 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Budget.css";
-import {
-  getCurrentUser,
-  updateLocalStorage,
-  getLocalBudget,
-  getFilteredBudgetList,
-} from "../utils";
+import { updateLocalStorage } from "../utils";
 
-const ItemList = () => {
-  const user = getCurrentUser(); 
+const ItemList = ({ list }) => {
+  const [budgetItems, setBudgetItems] = useState(list);
 
-  const localBudgetList = getFilteredBudgetList("username", user.username);
-  const [budgetItems, setBudgetItems] = useState(
-    getFilteredBudgetList("username", user.username)
-  );
-
- 
+  useEffect(() => {
+    setBudgetItems(list);
+  }, [list]);
 
   const deleteBudgetItem = (item) => {
     const newBudgetItems = budgetItems.filter(

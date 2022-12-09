@@ -8,11 +8,34 @@ label {
 .login-form-container {
   height: 100%;
   width: max-content;
-  padding: 30px 15px;
+  padding: 40px;
   border: 1px solid var(--white);
   border-radius: 10px;
+
   display: grid;
-  place-items: center;
+  grid-template-columns: 40% 60%;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2%;
+}
+
+.username, .password {
+  font-size: 16px;
+}
+
+.login-form-container input {
+  font-family: var(--font-secondary);
+  color: var(--secondary);
+  padding-left: 5%;
+}
+
+.login-form-container .notif {
+  height: max-content;
+  padding: 5px;
+  grid-column: span 2;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .login-form {

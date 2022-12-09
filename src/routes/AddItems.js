@@ -3,16 +3,14 @@ import "./Budget.css";
 import { getCurrentUser, updateLocalStorage, getLocalBudget } from "../utils";
 import { Notifications } from "../parts";
 
-const AddItems = () => {
+const AddItems = ({ setBudgetList }) => {
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("EXPENSE");
   const [notif, setNotif] = useState({ status: undefined, message: undefined });
 
   const username = getCurrentUser().username;
-
   let localBudget = getLocalBudget();
-  console.log(localBudget);
 
   const AddTransaction = () => {
     if (amount < 0) {
@@ -30,7 +28,7 @@ const AddItems = () => {
       return;
     }
     localBudget.push({ username, category, amount, type });
-    console.log(localBudget);
+    setBudgetList(localBudget);
     updateLocalStorage("budget", localBudget);
     setNotif({ status: undefined, message: undefined });
     setCategory("");
