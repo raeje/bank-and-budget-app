@@ -1,10 +1,68 @@
-.workspace.profile {
-  grid-template-columns: 1fr;
-  grid-gap: 25px 0;
+.immutable-panel {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  place-items: center;
 }
-.user-info-container#profile {
-  height: 100%;
-  width: 100%;
-  padding: 30px 150px;
-  margin: auto;
+
+  .profile-panel {
+    padding: 30px;
+  }
+
+    .image-container {
+      height: 220px;
+      width: 220px;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 5px solid var(--highlight);
+    }
+
+      .image-container img {
+        margin: auto;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+      }
+
+    .text-fields {
+      height: 100%;
+      width: 100%;
+      font-size: 16px;
+      padding: 20px 0;
+
+      display: grid;
+      grid-template-columns: 40% 60%;
+      justify-content: center;
+      align-items: center;
+    }
+
+      .field-value {
+        padding-left: 10px;
+      }
+
+    .immutable-panel .text-fields {
+      grid-gap: 50px 0;
+    }
+
+.mutable-panel {
+  display: grid;
+  grid-template-rows: 75% 10% 10%;
 }
+
+    .mutable-panel .text-fields {
+      grid-gap: 5% 0;
+      text-justify: center;
+    }
+
+      .mutable-panel .text-fields .field-value {
+        height: 100%;
+        font-family: var(--font-secondary);
+        color: var(--secondary);
+        background-color: var(--highlight);
+        border-radius: 8px;
+      }
+
+    .mutable-panel .notif {
+      font-size: 14px;
+      padding: 5px;
+    }

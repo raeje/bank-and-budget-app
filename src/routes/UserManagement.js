@@ -5,6 +5,7 @@ import {
   generateAcctNum,
   validateFields,
   domValue,
+  getFilteredUsersList,
 } from "../utils";
 import { UserManagementHeader, Notifications } from "../parts";
 import "./UserManagement.css";
@@ -86,6 +87,8 @@ const UserManagement = () => {
 
   const handleSaveEdit = (e) => {
     const acctNum = e.target.classList[0];
+    const user = getFilteredUsersList("acctNum", acctNum)[0];
+    const img = user.img;
     const id = `.editable-${e.target.classList[0]}`;
     const result = validateFields(
       [
@@ -101,6 +104,7 @@ const UserManagement = () => {
 
     if (result) {
       const index = users.findIndex((user) => user.acctNum === acctNum);
+      const isLoggedIn = role === "admin" ? true : false;
       const modifiedUser = {
         username,
         password,
@@ -110,7 +114,8 @@ const UserManagement = () => {
         mobileNum,
         acctNum,
         role,
-        isLoggendIn: false,
+        isLoggedIn,
+        img,
       };
 
       const newUsers = users.map((user, i) => {
@@ -119,6 +124,7 @@ const UserManagement = () => {
         }
         return user;
       });
+
       setUsers(newUsers);
       updateLocalStorage("users", newUsers);
 
@@ -142,6 +148,7 @@ const UserManagement = () => {
   };
 
   const handleSave = () => {
+    const img = "default.webp";
     const newUsers = [
       {
         username,
@@ -153,6 +160,7 @@ const UserManagement = () => {
         acctNum,
         role,
         isLoggedIn: false,
+        img,
       },
       ...users,
     ];

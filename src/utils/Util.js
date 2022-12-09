@@ -214,6 +214,18 @@ const validateField = (field, setNotif, isNewUser) => {
     return true;
   }
 
+  if (key === "Confirm Password") {
+    const [password, confirmPassword] = [...val];
+    if (password !== confirmPassword) {
+      setNotif({
+        status: "error",
+        message: `Invalid password; does not match.`,
+      });
+      return false;
+    }
+    return true;
+  }
+
   return true;
 };
 

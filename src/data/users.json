@@ -8,7 +8,8 @@
     "mobileNum": "0917123123",
     "acctNum": "001",
     "role": "admin",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "001.webp"
   },
   {
     "username": "neds",
@@ -19,7 +20,8 @@
     "mobileNum": "09139483958",
     "acctNum": "92075257",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "92075257.jpeg"
   },
   {
     "username": "tyrionl",
@@ -30,7 +32,8 @@
     "mobileNum": "09832938492",
     "acctNum": "16159333",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "16159333.gif"
   },
   {
     "username": "sandorc",
@@ -41,7 +44,8 @@
     "mobileNum": "09938274921",
     "acctNum": "27182268",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "27182268.gif"
   },
   {
     "username": "danyt",
@@ -52,7 +56,8 @@
     "mobileNum": "09128374637",
     "acctNum": "84602019",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "84602019.gif"
   },
   {
     "username": "bobbyb",
@@ -63,7 +68,8 @@
     "mobileNum": "099384717283",
     "acctNum": "12484020",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "12484020.jpeg"
   },
   {
     "username": "jons",
@@ -74,7 +80,8 @@
     "mobileNum": "09174438481",
     "acctNum": "62813098",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "62813098.gif"
   },
   {
     "username": "khald",
@@ -85,7 +92,8 @@
     "mobileNum": "0991332199",
     "acctNum": "40768139",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "40768139.jpeg"
   },
   {
     "username": "cerseil",
@@ -96,7 +104,8 @@
     "mobileNum": "09778819201",
     "acctNum": "49588589",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "49588589.png"
   },
   {
     "username": "catelyns",
@@ -107,7 +116,8 @@
     "mobileNum": "09779918312",
     "acctNum": "96223354",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "96223354.gif"
   },
   {
     "username": "robbs",
@@ -118,7 +128,8 @@
     "mobileNum": "09771273718",
     "acctNum": "51741979",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "51741979.jpeg"
   },
   {
     "username": "sansas",
@@ -129,7 +140,8 @@
     "mobileNum": "097720394871",
     "acctNum": "60269489",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "60269489.gif"
   },
   {
     "username": "jorahm",
@@ -140,7 +152,8 @@
     "mobileNum": "09993817721",
     "acctNum": "54447563",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "54447563.jpeg"
   },
   {
     "username": "theong",
@@ -151,7 +164,8 @@
     "mobileNum": "09158891293",
     "acctNum": "17242460",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "17242460.gif"
   },
   {
     "username": "bronnb",
@@ -162,7 +176,8 @@
     "mobileNum": "09157364461",
     "acctNum": "99816190",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "99816190.gif"
   },
   {
     "username": "barristans",
@@ -173,7 +188,8 @@
     "mobileNum": "09157474551",
     "acctNum": "82654894",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "82654894.jpeg"
   },
   {
     "username": "ramsayb",
@@ -184,6 +200,7 @@
     "mobileNum": "09184451238",
     "acctNum": "68123160",
     "role": "customer",
-    "isLoggedIn": false
+    "isLoggedIn": false,
+    "img": "68123160.gif"
   }
 ]
