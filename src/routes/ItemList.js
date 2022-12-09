@@ -17,6 +17,36 @@ const ItemList = ({ list }) => {
     updateLocalStorage("budget", newBudgetItems);
   };
 
+  // Function to update the category or amount of an item
+  const updateBudgetItem = (event, item) => {
+    const updatedBudgetItems = budgetItems.map((budgetItem) => {
+      if (budgetItem !== item) return budgetItem;
+
+      // Update the category or amount of the selected item
+      return {
+        ...budgetItem,
+        [event.target.name]: event.target.value,
+      };
+    });
+    setBudgetItems(updatedBudgetItems);
+    updateLocalStorage("budget", updatedBudgetItems);
+  };
+
+  // Function to toggle the edit mode for an item
+  const toggleEditMode = (item) => {
+    const updatedBudgetItems = budgetItems.map((budgetItem) => {
+      if (budgetItem !== item) return budgetItem;
+
+      // Toggle the edit mode for the selected item
+      return {
+        ...budgetItem,
+        isEditing: !budgetItem.isEditing,
+      };
+    });
+    setBudgetItems(updatedBudgetItems);
+    updateLocalStorage("budget", updatedBudgetItems);
+  };
+
   let totalAmount = 0;
   for (let i = 0; i < budgetItems.length; i++) {
     if (budgetItems[i].type === "EXPENSE") {
@@ -46,17 +76,40 @@ const ItemList = ({ list }) => {
         {budgetItems.map((item) => (
           <ul className="budget-container" key={item.date}>
             <div className="date-category">
-              <li>{item.category}</li>
+              {item.isEditing ? (
+                <input
+                  type="text"
+                  name="category"
+                  className="category-edit-input"
+                  value={item.category}
+                  onChange={(event) => updateBudgetItem(event, item)}
+                />
+              ) : (
+                <li>{item.category}</li>
+              )}
               <span className="item-date">{formattedDate}</span>
             </div>
-            <li
-              style={{ color: item.type === "EXPENSE" ? "#CF1020" : "green" }}
-            >
-              {item.type === "EXPENSE" ? "-" : "+"}
-              {item.amount.toLocaleString()}
-            </li>
+            {item.isEditing ? (
+              <input
+                type="number"
+                name="amount"
+                className="amount-edit-input"
+                value={item.amount}
+                onChange={(event) => updateBudgetItem(event, item)}
+              />
+            ) : (
+              <li
+                style={{ color: item.type === "EXPENSE" ? "#CF1020" : "green" }}
+              >
+                {item.type === "EXPENSE" ? "-" : "+"}
+                {item.amount.toLocaleString()}
+              </li>
+            )}
             <div className="budget-actions">
-              <i className="fa-regular fa-pen-to-square fa-1x"></i>
+              <i
+                className="fa-regular fa-pen-to-square fa-1x"
+                onClick={() => toggleEditMode(item)}
+              ></i>
               <i
                 className="fa-regular fa-trash-can fa-1x"
                 onClick={() => deleteBudgetItem(item)}
