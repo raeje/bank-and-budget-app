@@ -4,26 +4,10 @@
 
   display: grid;
   grid-template-columns: 65% 35%;
-  grid-template-rows: repeat(5, 20%);
+  grid-template-rows: 25% 10% 15% 30%;
   border: 1px solid var(--highlight);
   border-radius: 15px;
   margin-top: 2%;
-}
-
-.title {
-  margin-top: 3%;
-}
-
-.subtitle {
-  display: block;
-  position: relative;
-  top: -20%;
-}
-
-.hero-text-block {
-  display: block;
-  position: relative;
-  top: -50%;
 }
 
 .hero .title, .hero .subtitle, .hero-text-block {
@@ -53,4 +37,17 @@
 .login-form-container {
   grid-column: 2 / 3;
   grid-row: 2 / 5;
+}
+
+@media screen and (max-width: 1300px) {
+  .hero {
+    height: 70%;
+    justify-content: center;
+  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 30% 15% 30%;
+    border: 1px solid var(--highlight);
+    border-radius: 15px;
+  }
 }
