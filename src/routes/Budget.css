@@ -155,7 +155,7 @@
     border-radius: 15px;
 }
 
-.balance-info, .projected-balance {
+.budget-balance-info, .projected-balance {
     display: flex;
     flex-direction: column;
     text-align: center;

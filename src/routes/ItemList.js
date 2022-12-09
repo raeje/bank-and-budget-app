@@ -43,8 +43,8 @@ const ItemList = ({ list }) => {
         isEditing: !budgetItem.isEditing,
       };
     });
-
     setBudgetItems(updatedBudgetItems);
+    updateLocalStorage("budget", updatedBudgetItems);
   };
 
   let totalAmount = 0;

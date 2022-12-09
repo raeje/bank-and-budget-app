@@ -27,7 +27,7 @@ const SetBudget = () => {
 
   return (
     <div className="budget-balance glass">
-      <div className="balance-info">
+      <div className="budget-balance-info">
         <span className="budget-balance-label">Remaining Balance:</span>
         <span className="budget-balance-total">{user.balance}</span>
       </div>
