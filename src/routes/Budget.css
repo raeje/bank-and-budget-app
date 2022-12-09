@@ -207,5 +207,14 @@
     padding: 0 1rem;
 }
 
+.category-edit-input, .amount-edit-input {
+    background-color: var(--third);
+    color: var(--white);
+    border-style: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    max-width: fit-content;
+}
+
 
 

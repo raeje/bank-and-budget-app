@@ -80,6 +80,7 @@ const ItemList = ({ list }) => {
                 <input
                   type="text"
                   name="category"
+                  className="category-edit-input"
                   value={item.category}
                   onChange={(event) => updateBudgetItem(event, item)}
                 />
@@ -92,6 +93,7 @@ const ItemList = ({ list }) => {
               <input
                 type="number"
                 name="amount"
+                className="amount-edit-input"
                 value={item.amount}
                 onChange={(event) => updateBudgetItem(event, item)}
               />
