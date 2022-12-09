@@ -6,10 +6,11 @@ label {
 }
 
 .login-form-container {
+  background-color: var(--secondary);
   height: 100%;
   width: max-content;
   padding: 40px;
-  border: 1px solid var(--white);
+  border: 1px solid var(--highlight);
   border-radius: 10px;
 
   display: grid;
@@ -28,6 +29,7 @@ label {
   font-family: var(--font-secondary);
   color: var(--secondary);
   padding-left: 5%;
+  border-radius: 10px;
 }
 
 .login-form-container .notif {

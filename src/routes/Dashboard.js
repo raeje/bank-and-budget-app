@@ -50,7 +50,7 @@ const Dashboard = () => {
       <TopNav name="IBB" />
       <DashboardBody>
         <Sidebar>
-          <h3>
+          <h3 className="welcome">
             Hello,{" "}
             <span className="fullname">
               {currentUser ? `${currentUser.fName} ${currentUser.lName}` : ""}

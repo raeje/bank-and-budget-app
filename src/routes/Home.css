@@ -17,26 +17,5 @@
   flex-direction: column;
 }
 
-.home-footer {
-  background-color: rgb(12, 11, 19);
-  height: 30vh;
-  width: 80vw;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.first-ft, .second-ft, .third-ft {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7%;
-}
-
-.first-ft, .second-ft {
-  border-right: 1px solid gray;
-}
 
 
