@@ -25,20 +25,6 @@ function Home() {
       <Hero title={heroTitle} subtitle={heroSubtitle} textBlock={textBlock}>
         <LoginForm />
       </Hero>
-      <div className="home-footer">
-        <div className="first-ft">
-          <i className="fa-solid fa-sliders fa-2xl"></i>
-          <span>Easy control of<br></br>your money</span>
-        </div>
-        <div className="second-ft">
-          <i className="fa-solid fa-circle-dollar-to-slot fa-2xl"></i>
-          <span>Get cashback in every<br></br>transaction</span>
-        </div>
-        <div className="third-ft">
-          <i className="fa-solid fa-chart-gantt fa-2xl"></i>
-          <span>Track your cashflow with<br></br>the budget app</span>
-        </div>
-      </div>
     </div>
   );
 }

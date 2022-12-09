@@ -16,27 +16,3 @@
   display: flex;
   flex-direction: column;
 }
-
-.home-footer {
-  background-color: inherit;
-  height: 30vh;
-  width: 80vw;
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.first-ft, .second-ft, .third-ft {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7%;
-}
-
-.first-ft, .second-ft {
-  border-right: 1px solid gray;
-}
-
-
