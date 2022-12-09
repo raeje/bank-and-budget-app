@@ -23,7 +23,6 @@ const LoginForm = () => {
     Login({ username, password, setNotif });
     const currentUser = getCurrentUser();
     if (currentUser) {
-      console.log("LoginForm", currentUser);
       //navigate("/dashboard", { state: currentUser, replace: true });
       navigate("/dashboard/profile", { replace: true });
     }

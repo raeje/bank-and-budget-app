@@ -10,6 +10,7 @@ import {
   generateAcctNum,
   validateFields,
   domValue,
+  authenticateUser,
 } from "./Util";
 export {
   getUsers,
@@ -23,4 +24,5 @@ export {
   generateAcctNum,
   validateFields,
   domValue,
+  authenticateUser,
 };

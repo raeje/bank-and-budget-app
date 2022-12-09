@@ -22,12 +22,12 @@ const Login = (props) => {
       message: `${currentUser.username} logged in!`,
     });
     console.log(`${currentUser.username} logged in! ${currentUser.role}`);
+    return;
   }
   setNotif({
     status: "error",
     message: "Wrong username or password.",
   });
-  console.log("Wrong username or password.");
 };
 
 export default Login;

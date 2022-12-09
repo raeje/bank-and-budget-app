@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const getUsers = () => {
   let users = localStorage.getItem("users");
   users = users ? JSON.parse(localStorage.users) : [];
@@ -92,7 +94,6 @@ const generateAcctNum = () => {
   while (acctNumExists) {
     newAcctNum = acctNum();
     acctNumExists = existingAcctNums.includes(newAcctNum);
-    console.log(newAcctNum, acctNumExists);
   }
 
   return newAcctNum;
@@ -216,6 +217,15 @@ const validateField = (field, setNotif, isNewUser) => {
   return true;
 };
 
+const authenticateUser = (tabs, childURL, role) => {
+  if (!tabs.map((tab) => tab.icon).includes(childURL)) {
+    const navigate = useNavigate();
+    navigate("/error-page", {
+      state: { type: "not-allowed", url: childURL, role: role },
+    });
+  }
+};
+
 export {
   getUsers,
   getCurrentUser,
@@ -228,4 +238,5 @@ export {
   generateAcctNum,
   validateFields,
   domValue,
+  authenticateUser,
 };

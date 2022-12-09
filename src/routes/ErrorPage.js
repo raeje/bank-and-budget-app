@@ -1,10 +1,20 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./ErrorPage.css";
 
 const ErrorPage = ({ type }) => {
-  const invalidAddressMsg = "Oops! Looks like you're lost.";
+  const location = type ? undefined : useLocation();
+  const errorType = type ? type : location.state.type;
+
+  const lostMsg = "Oops! Looks like you're lost.";
   const notAllowedMsg = "You are not allowed here!";
+  const noAccessMsg = (() => {
+    if (!location) {
+      return;
+    }
+    const requiredRole = location.state.role === "admin" ? "customer" : "admin";
+    return `The page you're trying to access requires ${requiredRole.toUpperCase()} privileges.`;
+  })();
 
   const navigate = useNavigate();
   const handleBackBtn = () => {
@@ -14,9 +24,10 @@ const ErrorPage = ({ type }) => {
   return (
     <div className="error-page-container">
       <div className="message-container">
-        <h1>{invalidAddressMsg}</h1>
+        <h1>{errorType === "lost" ? lostMsg : notAllowedMsg}</h1>
+        <span className="addt-error-info">{noAccessMsg}</span>
         <button className="go-back" onClick={handleBackBtn}>
-          &lt; Go back
+          &lt; GO BACK
         </button>
       </div>
     </div>

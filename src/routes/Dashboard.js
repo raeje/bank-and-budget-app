@@ -3,22 +3,21 @@ import { Outlet } from "react-router-dom";
 import "./Dashboard.css";
 import { TopNav, DashboardBody, Sidebar, Tabs, Tab } from "../parts";
 import { useNavigate } from "react-router-dom";
-import { getCurrentUser, getUserTabs } from "../utils";
+import { authenticateUser, getCurrentUser, getUserTabs } from "../utils";
 import { Logout } from "../components";
 
 const Dashboard = () => {
-  const childURL = window.location.pathname.match(/.+\/(.*$)/)[1];
+  const childURL = window.location.pathname.match(/.+\/(.*$)/)
+    ? window.location.pathname.match(/.+\/(.*$)/)[1]
+    : "";
   const workspace = `workspace container glass ${childURL}`;
   const [workspaceClassName, setWorkspaceClassName] = useState();
   const currentUser = getCurrentUser();
   const tabs = getUserTabs(currentUser);
 
-  console.log(
-    tabs.map((tab) => tab.icon),
-    childURL
-  );
-
   const navigate = useNavigate();
+  authenticateUser(tabs, childURL, currentUser.role);
+
   useEffect(() => {
     if (!currentUser) {
       navigate("/home", { replace: true });
