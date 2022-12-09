@@ -7,7 +7,7 @@ html {
 
 .main {
   height: 15vh;
-  padding: 10px 30px;
+  padding: 10px 0;
   color: var(--white);
 
   display: flex;
@@ -20,7 +20,6 @@ html {
   font-weight: 900;
   font-family: var(--header-font);
   color: var(--highlight);
-  margin: 0 0 0 15px;
 }
 
 button {
@@ -38,5 +37,51 @@ button {
 }
 
 .load-clear-container {
-  margin: 0 10px;
+  width: 400px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 40% 40% 20%;
+}
+
+.switch-container input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.switch-container label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 25px;
+	background: grey;
+   margin-bottom: 20px;
+	display: block;
+	border-radius: 50px;
+	position: relative;
+}
+
+.switch-container label:after {
+	content: '';
+	position: absolute;
+	top: 2.5px;
+	left: 2.5px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 50px;
+	transition: 0.3s;
+}
+
+.switch-container input:checked + label {
+	background: #bada55;
+}
+
+.switch-container input:checked + label:after {
+	left: calc(100% - 2.5px);
+	transform: translateX(-100%);
+}
+
+.switch-container label:active:after {
+	width: 30px;
 }
