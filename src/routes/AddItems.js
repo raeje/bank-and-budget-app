@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Budget.css";
-import { getCurrentUser, updateLocalStorage, getLocalBudget } from "../utils";
+import {
+  getCurrentUser,
+  updateLocalStorage,
+  getLocalBudget,
+  getFilteredBudgetList,
+} from "../utils";
 import { Notifications } from "../parts";
 import { useNavigate } from "react-router-dom";
 
@@ -43,8 +48,9 @@ const AddItems = ({ setBudgetList }) => {
       return;
     }
     localBudget.push({ username, category, amount, type, date: formattedDate });
-    setBudgetList(localBudget);
     updateLocalStorage("budget", localBudget);
+    const userBudgetList = getFilteredBudgetList("username", username);
+    setBudgetList(userBudgetList);
     setNotif({ status: undefined, message: undefined });
     setCategory("");
     setAmount("");
